@@ -39,7 +39,7 @@ class Entry extends Component {
         
         return (
             
-            <div className="entry">
+            <div className="entry" id={this.props.title[0]}>
 
                 <div className="entry__header">
             

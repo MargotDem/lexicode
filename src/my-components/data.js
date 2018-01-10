@@ -119,7 +119,8 @@ const data = {
         text: 'Heroku is a cloud platform as a service (PaaS) supporting several programming languages that is used as a web application deployment model. ',
         links: [
             { link: 'https://en.wikipedia.org/wiki/Heroku', name: 'wikipedia'},
-            { link: 'https://www.heroku.com/', name: 'heroku.com'}
+            { link: 'https://www.heroku.com/', name: 'heroku.com'},
+            { link: 'https://elements.heroku.com/buildpacks/mars/create-react-app-buildpack', name: 'Heroku Buildpack for create-react-app'}
         ],
         tags: ['general', 'production']
     },

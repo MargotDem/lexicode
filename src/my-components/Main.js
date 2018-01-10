@@ -35,6 +35,8 @@ class Main extends Component {
             <div className="my-main">
             
                 <TagsBar onClick={this.searchByTag}/>
+            
+                <AlphabetBar/>
 
                 <EntriesContainer displayAll={this.state.displayAll} tagToDisplay={this.state.tagToDisplay} letterToGoTo={this.state.letterToGoTo} onClick={this.searchByTag}/>
             

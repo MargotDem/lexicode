@@ -3,51 +3,76 @@ import React, { Component } from 'react';
 
 class AlphabetBar extends Component {
     
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-    }
-    
-    handleClick(e) {
-        const letter = e.target.value;
-        this.props.onClick(letter);
-    }
-    
     render() {
+        
+        /* this doesn't work for some weird reason é_è:
+        
+        const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+        const array = [];
+
+        for (var letter in alphabet) {
+            const button = (
+                <button value={alphabet[letter]} onClick={(function() { document.getElementById(alphabet[letter]).scrollIntoView(true); }).bind(this)}>{alphabet[letter].toUpperCase()}</button>
+            );
+            array.push(button);
+        }
+    
+        */
         
         return (
             
-            <div className="alphabet-bar">
+            <div className='alphabet-bar'>
+             
+                <button onClick={(function() { document.getElementById('a') ? document.getElementById('a').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>A</button>
             
-                <button value="a" onClick={this.handleClick}>A</button>
-                <button value="b" onClick={this.handleClick}>B</button>
-                <button value="c" onClick={this.handleClick}>C</button>
-                <button value="d" onClick={this.handleClick}>D</button>
-                <button value="e" onClick={this.handleClick}>E</button>
-                <button value="f" onClick={this.handleClick}>F</button>
-                <button value="g" onClick={this.handleClick}>G</button>
-                <button value="h" onClick={this.handleClick}>H</button>
-                <button value="i" onClick={this.handleClick}>I</button>
-                <button value="j" onClick={this.handleClick}>J</button>
-                <button value="k" onClick={this.handleClick}>K</button>
-                <button value="l" onClick={this.handleClick}>L</button>
-                <button value="m" onClick={this.handleClick}>M</button>
-                <button value="n" onClick={this.handleClick}>N</button>
-                <button value="o" onClick={this.handleClick}>O</button>
-                <button value="p" onClick={this.handleClick}>P</button>
-                <button value="q" onClick={this.handleClick}>Q</button>
-                <button value="r" onClick={this.handleClick}>R</button>
-                <button value="s" onClick={this.handleClick}>S</button>
-                <button value="t" onClick={this.handleClick}>T</button>
-                <button value="u" onClick={this.handleClick}>U</button>
-                <button value="v" onClick={this.handleClick}>V</button>
-                <button value="w" onClick={this.handleClick}>W</button>
-                <button value="x" onClick={this.handleClick}>X</button>
-                <button value="y" onClick={this.handleClick}>Y</button>
-                <button value="z" onClick={this.handleClick}>Z</button>
-            
-            
-            
+                <button onClick={(function() { document.getElementById('b') ? document.getElementById('b').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>B</button>
+                
+                <button onClick={(function() { document.getElementById('c') ? document.getElementById('c').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>C</button>
+                
+                <button onClick={(function() { document.getElementById('d') ? document.getElementById('d').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>D</button>
+                
+                <button onClick={(function() { document.getElementById('e') ? document.getElementById('e').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>E</button>
+                
+                <button onClick={(function() { document.getElementById('f') ? document.getElementById('f').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>F</button>
+                
+                <button onClick={(function() { document.getElementById('g') ? document.getElementById('g').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>G</button>
+                
+                <button onClick={(function() { document.getElementById('h') ? document.getElementById('h').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>H</button>
+                
+                <button onClick={(function() { document.getElementById('i') ? document.getElementById('I').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>I</button>
+                
+                <button onClick={(function() { document.getElementById('j') ? document.getElementById('j').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>J</button>
+                
+                <button onClick={(function() { document.getElementById('k') ? document.getElementById('k').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>K</button>
+                
+                <button onClick={(function() { document.getElementById('l') ? document.getElementById('l').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>L</button>
+                
+                <button onClick={(function() { document.getElementById('m') ? document.getElementById('m').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>M</button>
+                
+                <button onClick={(function() { document.getElementById('n') ? document.getElementById('n').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>N</button>
+                
+                <button onClick={(function() { document.getElementById('o') ? document.getElementById('o').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>O</button>
+                
+                <button onClick={(function() { document.getElementById('p') ? document.getElementById('p').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>P</button>
+                
+                <button onClick={(function() { document.getElementById('r') ? document.getElementById('r').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>R</button>
+                
+                <button onClick={(function() { document.getElementById('s') ? document.getElementById('s').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>S</button>
+                
+                <button onClick={(function() { document.getElementById('t') ? document.getElementById('t').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>T</button>
+                
+                <button onClick={(function() { document.getElementById('u') ? document.getElementById('u').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>U</button>
+                
+                <button onClick={(function() { document.getElementById('v') ? document.getElementById('v').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>V</button>
+                
+                <button onClick={(function() { document.getElementById('w') ? document.getElementById('w').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>W</button>
+                
+                <button onClick={(function() { document.getElementById('x') ? document.getElementById('x').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>X</button>
+                
+                <button onClick={(function() { document.getElementById('y') ? document.getElementById('y').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>Y</button>
+                
+                <button onClick={(function() { document.getElementById('z') ? document.getElementById('z').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>Z</button>
+                
             </div>
         ); 
     }

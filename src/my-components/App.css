@@ -79,7 +79,7 @@ entries
 }
 
 .entry__links a:hover {
-    color: lightgray;
+    color: silver;
 }
 
 .entry__text {
@@ -106,7 +106,8 @@ tags-bar
 
 .tags-bar {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 50px;
+    height: 25px;
 }
 
 .tags-bar__button {
@@ -124,6 +125,9 @@ tags-bar
 
 .tags-bar__button:hover {
     cursor: pointer;
+    border-bottom: solid 2px whitesmoke;
+    border-right: solid 2px whitesmoke;
+    box-shadow: 
 }
 
 .tags-bar__button:focus {
@@ -183,4 +187,23 @@ alphabet-bar
 
 .alphabet-bar {
     text-align: center;
+    margin: 30px;
+}
+
+.alphabet-bar button {
+    border: none;
+    background-color: whitesmoke;
+    color: #505050;
+    margin: 0px 8px 0px 8px;
+    font-family: Teko;
+    font-size: 16px;
+}
+
+.alphabet-bar button:focus {
+    outline: none;
+}
+
+.alphabet-bar button:hover {
+    cursor: pointer;
+    color: silver;
 }

@@ -5,6 +5,12 @@ import data from './data.js';
 
 class EntriesContainer extends Component {
     
+   
+
+    handleShow(i) {
+        this.refs[i].scrollIntoView({block: 'end', behavior: 'smooth'});
+    }
+    
     render() {
         
          // entriesArray is going to receive every entry to be displayed as an Entry component:
@@ -84,7 +90,7 @@ class EntriesContainer extends Component {
             );
             
         
-        // if a tags-bar__button has been clicked, display every entry corresponding to said tag (pretty much the same thing, it's all very WET...):    
+        // if a tags-bar__button has been clicked, display every entry corresponding to said tag (pretty much the same thing, some refactoring to be done here):    
         
         }  else {
         
@@ -123,7 +129,7 @@ class EntriesContainer extends Component {
 
                     var entryCompo = (
 
-                        <Entry title={title} text={text} links={links} tags={tags} onClick={this.props.onClick}/>
+                        <Entry ref={key} title={title} text={text} links={links} tags={tags} onClick={this.props.onClick}/>
 
                     );
 
