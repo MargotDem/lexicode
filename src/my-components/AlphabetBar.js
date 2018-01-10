@@ -55,6 +55,8 @@ class AlphabetBar extends Component {
                 
                 <button onClick={(function() { document.getElementById('p') ? document.getElementById('p').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>P</button>
                 
+                <button onClick={(function() { document.getElementById('q') ? document.getElementById('q').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>Q</button>
+                
                 <button onClick={(function() { document.getElementById('r') ? document.getElementById('r').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>R</button>
                 
                 <button onClick={(function() { document.getElementById('s') ? document.getElementById('s').scrollIntoView(true) : alert('There is no entry for this letter') }).bind(this)}>S</button>

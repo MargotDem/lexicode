@@ -67,7 +67,8 @@ const data = {
     'build pipeline': {
         text: 'A modern build pipeline typically consists of: 1- A package manager, such as Yarn or npm. It lets you take advantage of a vast ecosystem of third-party packages, and easily install or update them. 2- A bundler, such as webpack or Browserify. It lets you write modular code and bundle it together into small packages to optimize load time. 3- A compiler such as Babel. It lets you write modern JavaScript code that still works in older browsers.',
         links: [
-            { link: 'https://reactjs.org/docs/add-react-to-an-existing-app.html', name: 'React: add react to an existing app'}
+            { link: 'https://reactjs.org/docs/add-react-to-an-existing-app.html', name: 'React: add react to an existing app'},
+            { link: 'https://survivejs.com/webpack/appendices/comparison/', name: 'comparison of build tools'}
         ],
         tags: ['js', 'config', 'production']
     },
@@ -78,7 +79,7 @@ const data = {
         ],
         tags: ['production', 'config']
     },
-    'modules nodejs': {
+    'modules (nodejs)': {
         text: 'Consider modules to be the same as JavaScript libraries: a set of functions you want to include in your application. Node.js has a set of built-in modules which you can use without any further installation.',
         links: [
             { link: 'https://www.w3schools.com/nodejs/nodejs_modules.asp', name: 'w3schools'}
@@ -247,11 +248,55 @@ const data = {
         tags: ['theory']
     },
     'decorators': {
-        text: 'What the heck are decorators anyway? Well, in Python, decorators provide a very simple syntax for calling higher-order functions. A Python decorator is a function that takes another function, extending the behavior of the latter function without explicitly modifying it.',
+        text: 'In Python, decorators provide a very simple syntax for calling higher-order functions. A Python decorator is a function that takes another function, extending the behavior of the latter function without explicitly modifying it.',
         links: [
             { link: 'https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841', name: 'medium.com'}
         ],
         tags: ['js', 'python']
+    },
+    'webpack': {
+        text: 'Webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it recursively builds a dependency graph that includes every module your application needs, then packages all of those modules into one or more bundles. Other def: Webpack is a build tool that puts all of your assets, including Javascript, images, fonts, and CSS, in a dependency graph. Webpack lets you use require() in your source code to point to local files, like images, and decide how they\'re processed in your final Javascript bundle, like replacing the path with a URL pointing to a CDN.',
+        links: [
+            { link: 'https://webpack.js.org/concepts/', name: 'webpack.js.org'},
+            { link: 'https://survivejs.com/webpack/what-is-webpack/', name: 'survivejs.com what is webpack'},
+            { link: 'https://blog.andrewray.me/webpack-when-to-use-and-why/', name: 'blog.andrewray.me'}
+        ],
+        tags: ['js', 'config', 'production']
+    },
+    'bundler': {
+        text: '',
+        links: [
+            { link: '', name: ''}
+        ],
+        tags: ['js', 'config', 'production']
+    },
+    'code editor (text editor)': {
+        text: 'A code editor is a text editor that provides useful features for writing code, such as standardized colors to display different parts of code. There are many plugins available for these editors, for example to format your html code.',
+        links: [
+            { link: 'https://www.codeschool.com/beginners-guide-to-web-development/choosing-an-ide-or-text-editor', name: 'codeschool.com - choosing and IDE or text editor'}
+        ],
+        tags: ['basics']
+    },
+    'integrated development environment': {
+        text: 'IDEs are tools that usually combine code editors, debuggers, and built-in tools for compiling and running applications.',
+        links: [
+            { link: 'https://www.codeschool.com/beginners-guide-to-web-development/choosing-an-ide-or-text-editor', name: 'codeschool.com - choosing and IDE or text editor'}
+        ],
+        tags: ['basics']
+    },
+    'debugging': {
+        text: 'Debuggers are programs that help you find bugs in your code while it’s running so you can remove them before you release an application or website into the world. With the debugger, you can set breakpoints on certain lines of your code, and then whenever that code is executed, the IDE will pause the running application and let you inspect the value of all the variables at that moment in time — in other words, the state of your application.',
+        links: [
+            { link: 'https://www.codeschool.com/beginners-guide-to-web-development/choosing-an-ide-or-text-editor', name: 'codeschool - choosing and IDE or text editor'}
+        ],
+        tags: ['basics']
+    },
+    'deploying': {
+        text: 'The process of putting a website / web app out on the web. Before deploying an application, you develop it on your computer, in a certain environment (development environment). There can be a lot of considerations to take into account when deploying an app (setting up the production environment).',
+        links: [
+            { link: '', name: ''}
+        ],
+        tags: ['basics']
     }
 }
 
@@ -270,6 +315,3 @@ export default data;
     }
 
 */
-
-
- 

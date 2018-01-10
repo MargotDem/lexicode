@@ -24,9 +24,20 @@
     background-color: #E8E8E8;
     padding-top: 80px;
     text-align: center;
-    color: #006ec9;
     border-top: solid 1px silver;
     font-family: Roboto;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.my-footer a {
+   color: #006ec9;
+    text-decoration: none;
+}
+
+.my-footer a:hover {
+   text-shadow: 1px 1px black;
+   
 }
 
 .my-main {
@@ -54,7 +65,7 @@ entries
 }
 
 .entry__header {
-    color: #e5b3ae;
+    color: #ddb1ad;
     font-family: teko;
     letter-spacing: 2px;
     font-size: 24px;
@@ -112,7 +123,7 @@ tags-bar
 
 .tags-bar__button {
     margin: 10px;
-    width: 84px;
+    width: 78px;
     height: 23px;
     color: black;
     border-bottom: solid 1px black;
@@ -135,7 +146,7 @@ tags-bar
 }
 
 .tags-bar__button_php {
-    background-color: lavender;
+    background-color: #e0e1ff;
 }
 
 .tags-bar__button_js {
@@ -147,19 +158,19 @@ tags-bar
 }
 
 .tags-bar__button_css {
-    background-color: #ef6c15;
+    background-color: #f77a27;
 }
 
 .tags-bar__button_production {
-    background-color: #ffe2ee;
+    background-color: #efe3e7;
 }
 
 .tags-bar__button_front {
-    background-color: #b2b2b2;
+    background-color: #5da0d8;
 }
 
 .tags-bar__button_back {
-    background-color: #11ad00;
+    background-color: #65c7d8;
 }
 
 .tags-bar__button_ai {
@@ -167,17 +178,20 @@ tags-bar
 }
 
 .tags-bar__button_theory {
-    background-color: #65c7d8;
+    background-color: #35a04e;
 }
 
 .tags-bar__button_general {
-    background-color: #ff6666;
+    background-color: salmon;
 }
 
 .tags-bar__button_config {
-    background-color: #ccffcc;
+    background-color: #68ddcb;
 }
 
+.tags-bar__button_basics {
+    background-color: #c65555;
+}
 
 /*
 
