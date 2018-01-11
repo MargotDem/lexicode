@@ -36,6 +36,18 @@ class Entry extends Component {
             );
         }
         
+        const text = [];
+        
+        for (var string in this.props.text) {
+            
+            text.push(this.props.text[string]);
+            text.push(
+                
+                <br/>
+            
+            );
+        }
+        
         
         return (
             
@@ -59,7 +71,7 @@ class Entry extends Component {
 
                 <div className="entry__text">
                     
-                    {this.props.text}
+                    {text}
             
                 </div>
 

@@ -34,8 +34,13 @@ class EntriesContainer extends Component {
             for (var key in entriesNames) {
     
                 var title = entriesNames[key];
+                
+                
+                // retrieve the text, format it, and store it in the text variable
+                
+                var unformattedText = data[title]['text'];
 
-                var text = data[title]['text'];
+                var text = unformattedText.split('///');
                 
                 
                 // links contains (jsx expressions) anchor elements with the link(s) for the given entry:
@@ -100,7 +105,12 @@ class EntriesContainer extends Component {
                     
                     var title = entriesNames[key];
 
-                    var text = data[title]['text'];
+                    // retrieve the text, format it, and store it in the text variable
+                
+                    var unformattedText = data[title]['text'];
+
+                    var text = unformattedText.split('///');
+                    
 
                     var links = [];
 

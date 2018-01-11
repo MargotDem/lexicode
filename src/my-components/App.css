@@ -33,11 +33,11 @@
 .my-footer a {
    color: #006ec9;
     text-decoration: none;
+    text-shadow: 1px 1px grey;
 }
 
 .my-footer a:hover {
    text-shadow: 1px 1px black;
-   
 }
 
 .my-main {
