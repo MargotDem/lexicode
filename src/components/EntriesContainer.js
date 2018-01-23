@@ -1,7 +1,7 @@
 /* global data */
 
 import React from 'react'
-import BaseContainer from '../containers/base'
+import BaseContainer from './base'
 import Entry from './Entry'
 import data from '../data.js'
 

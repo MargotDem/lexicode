@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import TagsBar from './TagsBar'
 import AlphabetBar from './AlphabetBar'
 import EntriesContainer from './EntriesContainer'
+import ScrollButton from './ScrollButton'
+import ShowAllButton from './ShowAllButton'
 
 class Main extends Component {
   constructor (props) {
@@ -13,15 +15,26 @@ class Main extends Component {
     }
     this.searchByTag = this.searchByTag.bind(this)
     this.searchByLetter = this.searchByLetter.bind(this)
+    this.displayAllEntries = this.displayAllEntries.bind(this)
   }
 
   searchByTag (tag) {
-    this.setState({ displayAll: false, tagToDisplay: tag })
+    this.setState({
+      displayAll: false,
+      tagToDisplay: tag
+    })
     window.scrollTo(0, 0)
   }
 
   searchByLetter (letter) {
     this.setState({ letterToGoTo: letter })
+  }
+
+  displayAllEntries () {
+    this.setState({
+      displayAll: true
+    })
+    window.scrollTo(0, 0)
   }
 
   render () {
@@ -39,6 +52,8 @@ class Main extends Component {
           letterToGoTo={this.state.letterToGoTo}
           onClick={this.searchByTag}
         />
+        <ShowAllButton onClick={this.displayAllEntries} />
+        <ScrollButton />
       </div>
     )
   }
