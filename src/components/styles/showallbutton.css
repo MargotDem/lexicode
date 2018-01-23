@@ -17,7 +17,7 @@
 
 .showAllButton:hover {
   cursor: pointer;
-  border: solid 1px white;
+  border: solid 1px whitesmoke;
 }
 
 .showAllButton:focus {
