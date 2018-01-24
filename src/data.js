@@ -380,6 +380,25 @@ const data = {
             { link: 'http://whatis.techtarget.com/definition/caching', name: 'whatis.techtarget.com'}
         ],
         tags: ['front', 'basics', 'config']
+    },
+    'scraping': {
+          links: [
+              { link: 'https://github.com/JonasCz/How-To-Prevent-Scraping', name: 'github.com/JonasCz/How-To-Prevent-Scraping'},
+              { link: 'https://codesandbox.io/s/github/divyenduz/React-Email-Scraping-Protection/tree/master/', name: 'codesandbox.io example of react email scraping protection'}
+          ],
+          tags: ['basics', 'front']
+    },
+    'lazy loading': {
+          links: [
+              { link: 'https://webpack.js.org/guides/lazy-loading/', name: 'webpack.js.org'}
+          ],
+          tags: ['general']
+    },
+    'resolving': {
+      links: [
+        {link: 'https://softwareengineering.stackexchange.com/questions/302404/what-does-resolving-mean-in-programing', name: 'softwareengineering.stackexchange.com'}
+      ],
+      tags: ['general']
     }
 }
 
@@ -390,7 +409,6 @@ export default data;
 /*
 
 '': {
-
         links: [
             { link: '', name: ''}
         ],

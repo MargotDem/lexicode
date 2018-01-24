@@ -1,6 +1,9 @@
 .alphabet-bar {
     text-align: center;
-    margin: 30px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .alphabet-bar a {
@@ -13,4 +16,16 @@
 
 .alphabet-bar a:hover {
     color: silver;
+}
+
+@media (max-width: 768px) {
+  .alphabet-bar a {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 425px) {
+  .alphabet-bar a {
+    font-size: 22px;
+  }
 }

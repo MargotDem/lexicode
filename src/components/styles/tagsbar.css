@@ -1,8 +1,9 @@
 
 .tags-bar {
-    text-align: center;
     margin-top: 50px;
-    height: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .tags-bar__button {

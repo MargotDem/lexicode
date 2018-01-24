@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+
 import TagsBar from './TagsBar'
 import AlphabetBar from './AlphabetBar'
 import EntriesContainer from './EntriesContainer'
 import ScrollButton from './ScrollButton'
 import ShowAllButton from './ShowAllButton'
+
+import './styles/main.css'
 
 class Main extends Component {
   constructor (props) {

@@ -11,20 +11,18 @@ import data from '../data.js'
 
 class EntriesContainer extends BaseContainer {
   handleShow (i) {
-    this.refs[i].scrollIntoView({block: 'end', behavior: 'smooth'})
+    this.refs[i].scrollIntoView()
   }
 
   fetchEntries (t, key, entriesNames, entriesArray) {
     var title = entriesNames[key]
 
     // retrieve the text, format it, and store it in the text variable
-
     var unformattedText = t(title)
 
     var text = unformattedText.split('///')
 
     // links contains (jsx expressions) anchor elements with the link(s) for the given entry:
-
     var links = []
 
     for (var link in data[title]['links']) {
@@ -41,7 +39,6 @@ class EntriesContainer extends BaseContainer {
     }
 
     // tags contains the tag(s) for the given entry:
-
     var tags = []
 
     for (var tag in data[title]['tags']) {
@@ -54,7 +51,6 @@ class EntriesContainer extends BaseContainer {
     (along with the Main component's state changing searchByTag function passed
     as props under the name of onClick), and store the latter in entriesArray:
     */
-
     var entryComponent = (
       <Entry
         title={title}
@@ -70,22 +66,18 @@ class EntriesContainer extends BaseContainer {
 
   renderMe (t) {
     // entriesArray is going to receive every entry to be displayed as an Entry component:
-
     var entriesArray = []
 
     // create and sort an array containing all the names of the entries:
-
     var entriesNames = Object.keys(data)
 
     entriesNames.sort()
 
     // if no tags-bar__button has been clicked, display all entries:
-
     if (this.props.displayAll) {
       /* for each entry, fetchEntries is going to pass the data to an
       Entry component that's going to be stored in entriesArray:
       */
-
       for (var key in entriesNames) {
         this.fetchEntries(t, key, entriesNames, entriesArray)
       }
