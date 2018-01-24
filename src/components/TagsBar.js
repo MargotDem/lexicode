@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
 
+import './styles/tagsbar.css'
+
 class TagsBar extends Component {
   constructor (props) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
   }
 
-  // when a tags-bar__button is clicked, this function gets the specific tag name and calls the props-passed parent's-state-changing onClick function, passing it the name as argument, so as to display every entry corresponding to said tag:
+  /*
+  when a tags-bar__button is clicked, this function gets the specific tag name
+  and calls the props-passed parent's-state-changing onClick function, passing
+  it the name as argument, so as to display every entry corresponding to said tag:
+  */
   handleClick (e) {
     const tag = e.target.value
     this.props.onClick(tag)

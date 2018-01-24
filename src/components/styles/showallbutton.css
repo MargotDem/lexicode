@@ -7,12 +7,15 @@
   border-radius: 0%;
   background-color: #006ec9;
   height: 22px;
-  width: 90px;
+  width: 95px;
   text-shadow: 1px 1px black;
   border-bottom: solid 1px black;
   border-right: solid 1px black;
   border-top: none;
   border-left: none;
+  font-family: teko;
+  font-size: 15px;
+  letter-spacing: 2px;
 }
 
 .showAllButton:hover {

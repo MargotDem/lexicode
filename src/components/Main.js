@@ -11,10 +11,8 @@ class Main extends Component {
     this.state = {
       displayAll: true,
       tagToDisplay: '',
-      letterToGoTo: ''
     }
     this.searchByTag = this.searchByTag.bind(this)
-    this.searchByLetter = this.searchByLetter.bind(this)
     this.displayAllEntries = this.displayAllEntries.bind(this)
   }
 
@@ -24,10 +22,6 @@ class Main extends Component {
       tagToDisplay: tag
     })
     window.scrollTo(0, 0)
-  }
-
-  searchByLetter (letter) {
-    this.setState({ letterToGoTo: letter })
   }
 
   displayAllEntries () {
@@ -49,7 +43,6 @@ class Main extends Component {
         <EntriesContainer
           displayAll={this.state.displayAll}
           tagToDisplay={this.state.tagToDisplay}
-          letterToGoTo={this.state.letterToGoTo}
           onClick={this.searchByTag}
         />
         <ShowAllButton onClick={this.displayAllEntries} />

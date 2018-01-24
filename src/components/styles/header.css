@@ -1,0 +1,15 @@
+.my-header {
+    width: 100%;
+    height: 130px;
+    background-color: #006ec9;
+    display: block;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 43px;
+    color: whitesmoke;
+    text-align: center;
+    font-family: teko;
+    letter-spacing: 8px;
+    text-shadow: 3px 3px black;
+    border-bottom: solid 1px #000;
+}

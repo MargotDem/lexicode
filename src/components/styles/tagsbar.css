@@ -1,0 +1,78 @@
+
+.tags-bar {
+    text-align: center;
+    margin-top: 50px;
+    height: 25px;
+}
+
+.tags-bar__button {
+    margin: 10px;
+    width: 78px;
+    height: 23px;
+    color: black;
+    border-bottom: solid 1px black;
+    border-right: solid 1px black;
+    border-top: none;
+    border-left: none;
+    font-size: 13px;
+    font-family: Roboto;
+}
+
+.tags-bar__button:hover {
+    cursor: pointer;
+    border-bottom: solid 2px whitesmoke;
+    border-right: solid 2px whitesmoke;
+    box-shadow:
+}
+
+.tags-bar__button:focus {
+    outline: none;
+}
+
+.tags-bar__button_php {
+    background-color: #e0e1ff;
+}
+
+.tags-bar__button_js {
+  background-color: #ffd633;
+}
+
+.tags-bar__button_python {
+    background-color: #79d19a;
+}
+
+.tags-bar__button_css {
+    background-color: #f77a27;
+}
+
+.tags-bar__button_production {
+    background-color: #efe3e7;
+}
+
+.tags-bar__button_front {
+    background-color: #5da0d8;
+}
+
+.tags-bar__button_back {
+    background-color: #65c7d8;
+}
+
+.tags-bar__button_ai {
+    background-color: #efa614;
+}
+
+.tags-bar__button_theory {
+    background-color: #35a04e;
+}
+
+.tags-bar__button_general {
+    background-color: salmon;
+}
+
+.tags-bar__button_config {
+    background-color: #68ddcb;
+}
+
+.tags-bar__button_basics {
+    background-color: #c65555;
+}

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import './styles/entry.css'
+
 class Entry extends Component {
   constructor (props) {
     super(props)

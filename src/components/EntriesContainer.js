@@ -1,8 +1,12 @@
 /* global data */
 
 import React from 'react'
+
 import BaseContainer from './base'
 import Entry from './Entry'
+
+import './styles/entriescontainer.css'
+
 import data from '../data.js'
 
 class EntriesContainer extends BaseContainer {
