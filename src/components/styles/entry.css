@@ -65,7 +65,7 @@
 
 @media (max-width: 425px) {
   .entry {
-    margin-bottom: 90px;
+    margin-bottom: 50px;
   }
   .entry__title {
     width: 100%;
@@ -79,5 +79,6 @@
 
   .entry__text {
     padding-top: 20px;
+    word-spacing: 1px;
   }
 }

@@ -2,7 +2,7 @@
   width: 100vw;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .mobile-footer {
     background-color: gainsboro;
     border-top: solid 1px silver;

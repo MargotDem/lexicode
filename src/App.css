@@ -13,7 +13,7 @@
 
 
 
-@media (min-width: 769px) {
+@media (min-width: 801px) {
   .bottom-button {
     color: white;
     z-index: 100;
@@ -21,8 +21,8 @@
     left: 25px;
     border-radius: 0%;
     background-color: #0079dd;
-    height: 22px;
-    width: 95px;
+    height: 30px;
+    width: 112px;
     text-shadow: 1px 1px black;
     border-bottom: solid 1px black;
     border-right: solid 1px black;
@@ -31,10 +31,12 @@
     font-family: teko;
     font-size: 15px;
     letter-spacing: 2px;
+    padding-top: 3px;
+    padding-left: 11px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .bottom-button {
     color: white;
     z-index: 100;

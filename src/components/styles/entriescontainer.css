@@ -7,3 +7,9 @@
     flex-direction: column;
     align-items: center;
 }
+
+@media (max-width: 800px) {
+  .entries {
+    margin: 70px 0px 50px 0px;
+  }
+}

@@ -19,3 +19,9 @@
 .my-footer a:hover {
    text-shadow: 1px 1px black;
 }
+
+@media (max-width: 800px) {
+  .my-footer {
+    padding-top: 60px;
+  }
+}
