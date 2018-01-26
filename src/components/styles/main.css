@@ -1,3 +1,17 @@
 .my-main {
   width: 100vw;
 }
+
+@media (max-width: 768px) {
+  .mobile-footer {
+    background-color: gainsboro;
+    border-top: solid 1px silver;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

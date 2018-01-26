@@ -8,7 +8,7 @@ export default class ScrollButton extends Component {
 
   render () {
     return (
-      <button className='bottomButton bottomButton_scrollButton' onClick={this.scrollToTop}>Scroll to top</button>
+      <button className='bottom-button bottom-button_scroll-button' onClick={this.scrollToTop}>Scroll to top</button>
     )
   }
 }

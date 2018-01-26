@@ -48,8 +48,10 @@ class Main extends Component {
           tagToDisplay={this.state.tagToDisplay}
           onClick={this.searchByTag}
         />
-        <ShowAllButton onClick={this.displayAllEntries} />
-        <ScrollButton />
+        <div className='mobile-footer'>
+          <ShowAllButton onClick={this.displayAllEntries} />
+          <ScrollButton />
+        </div>
       </div>
     )
   }

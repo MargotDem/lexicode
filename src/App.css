@@ -2,38 +2,56 @@
     box-sizing: border-box;
 }
 
-.bottomButton {
-  color: white;
-  z-index: 100;
-  position: fixed;
-  left: 25px;
-  border-radius: 0%;
-  background-color: #0079dd;
-  height: 22px;
-  width: 95px;
-  text-shadow: 1px 1px black;
-  border-bottom: solid 1px black;
-  border-right: solid 1px black;
-  border-top: none;
-  border-left: none;
-  font-family: teko;
-  font-size: 15px;
-  letter-spacing: 2px;
-}
-
-.bottomButton:hover {
+.bottom-button:hover {
   cursor: pointer;
   border: solid 1px whitesmoke;
 }
 
-.bottomButton:focus {
+.bottom-button:focus {
   outline: none;
 }
 
-@media (max-width: 768px) {
-  .bottomButton {
-    width: 120px;
-    height: 26px;
-  }
 
+
+@media (min-width: 769px) {
+  .bottom-button {
+    color: white;
+    z-index: 100;
+    position: fixed;
+    left: 25px;
+    border-radius: 0%;
+    background-color: #0079dd;
+    height: 22px;
+    width: 95px;
+    text-shadow: 1px 1px black;
+    border-bottom: solid 1px black;
+    border-right: solid 1px black;
+    border-top: none;
+    border-left: none;
+    font-family: teko;
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bottom-button {
+    color: white;
+    z-index: 100;
+    border-radius: 0%;
+    background-color: #0079dd;
+    height: 30px;
+    width: 112px;
+    text-shadow: 1px 1px black;
+    border-bottom: solid 1px black;
+    border-right: solid 1px black;
+    border-top: none;
+    border-left: none;
+    font-family: teko;
+    font-size: 17px;
+    letter-spacing: 2.2px;
+    margin: 0px 15px;
+    padding-top: 3px;
+    padding-left: 11px;
+  }
 }
