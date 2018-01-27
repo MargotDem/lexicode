@@ -22,7 +22,7 @@ const data = {
     links: [
       {link: 'https://www.w3schools.com/nodejs/nodejs_intro.asp', name: 'w3schools'}
     ],
-    tags: ['front', 'js', 'config', 'back']
+    tags: ['front', 'js', 'back']
   },
   'single page application': {
     links: [

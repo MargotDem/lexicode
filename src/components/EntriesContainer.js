@@ -1,5 +1,3 @@
-/* global data */
-
 import React from 'react'
 
 import BaseContainer from './base'
@@ -10,14 +8,10 @@ import './styles/entriescontainer.css'
 import data from '../data.js'
 
 class EntriesContainer extends BaseContainer {
-  handleShow (i) {
-    this.refs[i].scrollIntoView()
-  }
-
-  fetchEntries (t, key, entriesNames, entriesArray) {
+  fetchEntries (t, key, entriesNames, entriesArray, onClick) {
     var title = entriesNames[key]
 
-    // retrieve the text, format it, and store it in the text variable
+    // retrieve the text, store it in the text variable
     var text = t(title)
 
     // links contains (jsx expressions) anchor elements with the link(s) for the given entry:
@@ -55,7 +49,7 @@ class EntriesContainer extends BaseContainer {
         text={text}
         links={links}
         tags={tags}
-        onClick={this.props.onClick}
+        onClick={onClick}
       />
     )
 
@@ -63,6 +57,7 @@ class EntriesContainer extends BaseContainer {
   }
 
   renderMe (t) {
+    let { displayAll, tagToDisplay, onClick } = this.props
     // entriesArray is going to receive every entry to be displayed as an Entry component:
     var entriesArray = []
 
@@ -72,19 +67,19 @@ class EntriesContainer extends BaseContainer {
     entriesNames.sort()
 
     // if no tags-bar__button has been clicked, display all entries:
-    if (this.props.displayAll) {
+    if (displayAll) {
       /* for each entry, fetchEntries is going to pass the data to an
       Entry component that's going to be stored in entriesArray:
       */
       for (var key in entriesNames) {
-        this.fetchEntries(t, key, entriesNames, entriesArray)
+        this.fetchEntries(t, key, entriesNames, entriesArray, onClick)
       }
 
     // if a tags-bar__button has been clicked, display every entry corresponding to said tag:
     } else {
       for (var key in entriesNames) {
-        if (data[entriesNames[key]]['tags'].indexOf(this.props.tagToDisplay) > -1) {
-          this.fetchEntries(t, key, entriesNames, entriesArray)
+        if (data[entriesNames[key]]['tags'].indexOf(tagToDisplay) > -1) {
+          this.fetchEntries(t, key, entriesNames, entriesArray, onClick)
         }
       }
     }

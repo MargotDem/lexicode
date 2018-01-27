@@ -36,6 +36,7 @@ class Main extends Component {
   }
 
   render () {
+    let { displayAll, tagToDisplay } = this.state
     return (
 
       <div className='my-main'>
@@ -48,8 +49,8 @@ class Main extends Component {
         <ToggleLanguage />
 
         <EntriesContainer
-          displayAll={this.state.displayAll}
-          tagToDisplay={this.state.tagToDisplay}
+          displayAll={displayAll}
+          tagToDisplay={tagToDisplay}
           onClick={this.searchByTag}
         />
         <div className='mobile-footer'>
