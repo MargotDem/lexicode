@@ -10,21 +10,15 @@ export default class ToggleLanguage extends Component {
     this.state = {
       en: true
     }
-    this.changeEn = this.changeEn.bind(this)
-    this.changeFr = this.changeFr.bind(this)
+    this.changeLg = this.changeLg.bind(this)
   }
 
-  changeEn () {
-    i18n.changeLanguage('en')
+  changeLg () {
+    let isEn = this.state.en
+    let lg = isEn === true ? 'fr' : 'en'
+    i18n.changeLanguage(lg)
     this.setState({
-      en: true
-    })
-  }
-
-  changeFr () {
-    i18n.changeLanguage('fr')
-    this.setState({
-      en: false
+      en: !isEn
     })
   }
 
@@ -32,11 +26,11 @@ export default class ToggleLanguage extends Component {
     let isFr = this.state.en === false ? ' toggle-language__button_on' : ''
     let isEn = this.state.en === true ? ' toggle-language__button_on' : ''
     return (
-      <div className='toggle-language'>
-        <div className={'toggle-language__button' + isEn} onClick={this.changeEn}>
+      <div className='toggle-language' onClick={this.changeLg}>
+        <div className={'toggle-language__button' + isEn}>
           EN
         </div>
-        <div className={'toggle-language__button' + isFr} onClick={this.changeFr}>
+        <div className={'toggle-language__button' + isFr}>
           FR
         </div>
       </div>
