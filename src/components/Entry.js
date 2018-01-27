@@ -30,6 +30,7 @@ class Entry extends Component {
 
       tagButtons.push(
         <button
+          key={tag}
           value={tagNames[tag]}
           className={tagButtonClass}
           type='button'

@@ -12,7 +12,7 @@ class AlphabetBar extends Component {
           alphabet.split('').map((item, index) => {
             let url = '/#'.concat(item)
             return (
-              <a href={url}>{item.toUpperCase()}</a>
+              <a key={index} href={url}>{item.toUpperCase()}</a>
             )
           }
         )

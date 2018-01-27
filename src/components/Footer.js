@@ -6,7 +6,7 @@ class Footer extends Component {
   render () {
     return (
       <div className='my-footer'>
-        <a href='https://github.com/MargotDem' target='_blank'>Margot de Maulmont</a>
+        <a href='https://github.com/MargotDem' target='_blank' rel='noopener noreferrer'>Margot de Maulmont</a>
       </div>
     )
   }

@@ -23,8 +23,8 @@ class EntriesContainer extends BaseContainer {
       var linkName = data[title]['links'][link]['name']
 
       links.push(
-        <div>
-          <a target='_blank' href={linkAddress}>{linkName}</a>
+        <div key={link}>
+          <a target='_blank' rel='noopener noreferrer' href={linkAddress}>{linkName}</a>
           <br />
         </div>
       )
@@ -45,6 +45,7 @@ class EntriesContainer extends BaseContainer {
     */
     var entryComponent = (
       <Entry
+        key={key}
         title={title}
         text={text}
         links={links}
@@ -71,13 +72,13 @@ class EntriesContainer extends BaseContainer {
       /* for each entry, fetchEntries is going to pass the data to an
       Entry component that's going to be stored in entriesArray:
       */
-      for (var key in entriesNames) {
+      for (let key in entriesNames) {
         this.fetchEntries(t, key, entriesNames, entriesArray, onClick)
       }
 
     // if a tags-bar__button has been clicked, display every entry corresponding to said tag:
     } else {
-      for (var key in entriesNames) {
+      for (let key in entriesNames) {
         if (data[entriesNames[key]]['tags'].indexOf(tagToDisplay) > -1) {
           this.fetchEntries(t, key, entriesNames, entriesArray, onClick)
         }
