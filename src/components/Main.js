@@ -5,6 +5,7 @@ import AlphabetBar from './AlphabetBar'
 import EntriesContainer from './EntriesContainer'
 import ScrollButton from './ScrollButton'
 import ShowAllButton from './ShowAllButton'
+import ToggleLanguage from './ToggleLanguage'
 
 import './styles/main.css'
 
@@ -13,7 +14,7 @@ class Main extends Component {
     super(props)
     this.state = {
       displayAll: true,
-      tagToDisplay: '',
+      tagToDisplay: ''
     }
     this.searchByTag = this.searchByTag.bind(this)
     this.displayAllEntries = this.displayAllEntries.bind(this)
@@ -43,6 +44,9 @@ class Main extends Component {
           onClick={this.searchByTag}
         />
         <AlphabetBar />
+
+        <ToggleLanguage />
+
         <EntriesContainer
           displayAll={this.state.displayAll}
           tagToDisplay={this.state.tagToDisplay}

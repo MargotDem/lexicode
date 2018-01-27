@@ -11,7 +11,11 @@
   outline: none;
 }
 
-
+.bold {
+  font-weight: bolder;
+  color: #404040;
+  font-size: 16.2px;
+}
 
 @media (min-width: 801px) {
   .bottom-button {

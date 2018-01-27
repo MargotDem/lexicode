@@ -1,0 +1,27 @@
+.toggle-language {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.toggle-language__button {
+  display: inline;
+  height: 25px;
+  width: 45px;
+  font-family: Teko;
+  background-color: gainsboro;
+  color: whitesmoke;
+  text-align: center;
+  border: 2px solid gainsboro;
+  padding-top: 1px;
+}
+
+.toggle-language__button:hover {
+  cursor: pointer;
+}
+
+.toggle-language__button_on {
+  background-color: whitesmoke;
+  color: #006ec9;
+}

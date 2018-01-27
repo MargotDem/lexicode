@@ -18,9 +18,7 @@ class EntriesContainer extends BaseContainer {
     var title = entriesNames[key]
 
     // retrieve the text, format it, and store it in the text variable
-    var unformattedText = t(title)
-
-    var text = unformattedText.split('///')
+    var text = t(title)
 
     // links contains (jsx expressions) anchor elements with the link(s) for the given entry:
     var links = []

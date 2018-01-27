@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import renderHTML from 'react-render-html'
+
 import './styles/entry.css'
 
 class Entry extends Component {
@@ -35,15 +37,6 @@ class Entry extends Component {
       )
     }
 
-    const text = []
-
-    for (var string in this.props.text) {
-      text.push(this.props.text[string])
-      text.push(
-        <br />
-      )
-    }
-
     return (
       <div className='entry' id={this.props.title[0]} ref={this.props.title[0]}>
 
@@ -57,7 +50,7 @@ class Entry extends Component {
         </div>
 
         <div className='entry__text'>
-          {text}
+          {renderHTML(this.props.text)}
         </div>
 
         <div className='entry__links'>
