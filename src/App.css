@@ -17,6 +17,10 @@
   font-size: 16.2px;
 }
 
+.codeExample {
+  color: #A8A8A8;
+}
+
 @media (min-width: 801px) {
   .bottom-button {
     color: white;

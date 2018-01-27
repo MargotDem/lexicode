@@ -401,9 +401,23 @@ const data = {
   },
   'git': {
     links: [
-      {link: 'https://git-scm.com/', name: 'git-scm.com'}
+      {link: 'https://git-scm.com/', name: 'git-scm.com'},
+      {link: 'https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf', name: 'cheat sheet'}
     ],
     tags: ['basics']
+  },
+  'api': {
+    links: [
+      {link: 'https://en.wikipedia.org/wiki/Application_programming_interface', name: 'wikipedia'},
+      {link: 'https://www.mulesoft.com/resources/api/what-is-an-api', name: 'mulesoft.com - api'}
+    ],
+    tags: ['basics']
+  },
+  'promise': {
+    links: [
+      {link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises', name: 'developer.mozilla.org'}
+    ],
+    tags: ['js']
   }
 }
 
