@@ -28,7 +28,7 @@ const data = {
     links: [
       {link: 'https://en.wikipedia.org/wiki/Single-page_application', name: 'wikipedia'}
     ],
-    tags: ['theory', 'front']
+    tags: ['general', 'front']
   },
   'closure': {
     links: [
@@ -71,7 +71,8 @@ const data = {
   'modules (nodejs)': {
 
     links: [
-      {link: 'https://www.w3schools.com/nodejs/nodejs_modules.asp', name: 'w3schools'}
+      {link: 'https://www.w3schools.com/nodejs/nodejs_modules.asp', name: 'w3schools'},
+      {link: 'http://whatis.techtarget.com/definition/module', name: 'whatis.techtarget.com'}
     ],
     tags: ['front', 'js', 'config']
   },
@@ -369,7 +370,8 @@ const data = {
   },
   'routing': {
     links: [
-      {link: 'https://softwareengineering.stackexchange.com/questions/135495/in-mvc-what-is-the-difference-between-controller-and-router', name: 'softwareengineering.stackexchange.com'}
+      {link: 'https://softwareengineering.stackexchange.com/questions/135495/in-mvc-what-is-the-difference-between-controller-and-router', name: 'softwareengineering.stackexchange.com'},
+      {link: 'https://code.tutsplus.com/tutorials/build-a-react-app-with-laravel-restful-backend-part-1-laravel-5-api--cms-29442', name: 'React app - Laravel - restful backend'}
     ],
     tags: ['basics', 'back']
   },
@@ -391,7 +393,7 @@ const data = {
     links: [
         {link: 'https://webpack.js.org/guides/lazy-loading/', name: 'webpack.js.org'}
     ],
-    tags: ['general']
+    tags: ['general', 'production']
   },
   'resolving': {
     links: [
@@ -418,6 +420,58 @@ const data = {
       {link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises', name: 'developer.mozilla.org'}
     ],
     tags: ['js']
+  },
+  'endpoint (API endpoint)': {
+    links: [
+      {link: 'https://stackoverflow.com/questions/2122604/what-is-an-endpoint', name: 'stackoverflow.com'},
+      {link: 'https://en.wikipedia.org/wiki/Web_API', name: 'wikipedia'}
+    ],
+    tags: ['basics', 'back']
+  },
+  'restful api': {
+    links: [
+      {link: 'http://searchmicroservices.techtarget.com/definition/RESTful-API', name: 'searchmicroservices.techtarget.com'}
+    ],
+    tags: ['back', 'general']
+  },
+  'rest': {
+    links: [
+      {link: 'https://en.wikipedia.org/wiki/Representational_state_transfer', name: 'wikipedia'},
+      {link: 'https://stackoverflow.com/questions/671118/what-exactly-is-restful-programming', name: 'stackoverflow.com'},
+      {link: 'http://www.restapitutorial.com/lessons/whatisrest.html', name: 'restapitutorial.com'}
+    ],
+    tags: ['back', 'general']
+  },
+  'stateless protocol': {
+    links: [
+      {link: 'https://en.wikipedia.org/wiki/Stateless_protocol', name: 'wikipedia'}
+    ],
+    tags: ['theory', 'back']
+  },
+  'curl': {
+    links: [
+      {link: 'https://en.wikipedia.org/wiki/CURL', name: 'wikipedia'}
+    ],
+    tags: ['general']
+  },
+  'convention over configuration': {
+    links: [
+      {link: 'https://en.wikipedia.org/wiki/Convention_over_configuration', name: 'wikipedia'}
+    ],
+    tags: ['general', 'theory']
+  },
+  'redis': {
+    links: [
+      {link: 'https://redis.io/topics/introduction', name: 'redis.io'}
+    ],
+    tags: ['back']
+  },
+  'mongoDB': {
+    links: [
+      {link: 'https://en.wikipedia.org/wiki/MongoDB', name: 'wikipedia'},
+      {link: 'https://www.mongodb.com/what-is-mongodb', name: 'mongodb.com'}
+    ],
+    tags: ['back']
   }
 }
 
