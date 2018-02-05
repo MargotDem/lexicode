@@ -371,7 +371,8 @@ const data = {
   'routing': {
     links: [
       {link: 'https://softwareengineering.stackexchange.com/questions/135495/in-mvc-what-is-the-difference-between-controller-and-router', name: 'softwareengineering.stackexchange.com'},
-      {link: 'https://code.tutsplus.com/tutorials/build-a-react-app-with-laravel-restful-backend-part-1-laravel-5-api--cms-29442', name: 'React app - Laravel - restful backend'}
+      {link: 'https://code.tutsplus.com/tutorials/build-a-react-app-with-laravel-restful-backend-part-1-laravel-5-api--cms-29442', name: 'React app - Laravel - restful backend'},
+      {link: 'https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf', name: 'medium - a simple react router v4 tutorial'}
     ],
     tags: ['basics', 'back']
   },
@@ -472,6 +473,19 @@ const data = {
       {link: 'https://www.mongodb.com/what-is-mongodb', name: 'mongodb.com'}
     ],
     tags: ['back']
+  },
+  'ports': {
+    links: [
+      {link: 'http://searchnetworking.techtarget.com/definition/port', name: 'searchnetworking.techtarget.com'}
+    ],
+    tags: ['back', 'config', 'general']
+  },
+  'protocol buffers': {
+    links: [
+      {link: 'https://developers.google.com/protocol-buffers/', name: 'developers.google.com'},
+      {link: 'https://en.wikipedia.org/wiki/Protocol_Buffers', name: 'wikipedia'}
+    ],
+    tags: ['general']
   }
 }
 

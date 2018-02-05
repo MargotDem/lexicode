@@ -26,11 +26,11 @@ export default class ToggleLanguage extends Component {
     let isFr = this.state.en === false ? ' toggle-language__button_on' : ''
     let isEn = this.state.en === true ? ' toggle-language__button_on' : ''
     return (
-      <div className='toggle-language' onClick={this.changeLg}>
-        <div className={'toggle-language__button' + isEn}>
+      <div className='toggle-language'>
+        <div className={'toggle-language__button' + isEn} onClick={this.changeLg}>
           EN
         </div>
-        <div className={'toggle-language__button' + isFr}>
+        <div className={'toggle-language__button' + isFr} onClick={this.changeLg}>
           FR
         </div>
       </div>
