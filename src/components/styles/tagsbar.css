@@ -21,8 +21,8 @@
 
 .tags-bar__button:hover {
     cursor: pointer;
-    border-bottom: solid 2px whitesmoke;
-    border-right: solid 2px whitesmoke;
+    border-bottom: solid 1px whitesmoke;
+    border-right: solid 1px whitesmoke;
     box-shadow:
 }
 

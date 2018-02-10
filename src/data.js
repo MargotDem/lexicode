@@ -24,7 +24,8 @@ const data = {
   'nodejs': {
     art: false,
     links: [
-      {link: 'https://www.w3schools.com/nodejs/nodejs_intro.asp', name: 'w3schools'}
+      {link: 'https://www.w3schools.com/nodejs/nodejs_intro.asp', name: 'w3schools'},
+      {link: 'https://nodejs.org/en/', name: 'nodejs.org'}
     ],
     tags: ['front', 'js', 'back']
   },
@@ -58,8 +59,7 @@ const data = {
   },
   'bem': {
     art: false,
-
-  links: [
+    links: [
       {link: 'https://en.bem.info/methodology/quick-start/', name: 'en.bem.info'},
       {link: 'https://www.alsacreations.com/article/lire/1641-Bonnes-pratiques-en-CSS--BEM-et-OOCSS.html', name: '(French) alsacreations.com'}
     ],
@@ -67,8 +67,7 @@ const data = {
   },
   'build pipeline': {
     art: false,
-
-  links: [
+    links: [
       {link: 'https://reactjs.org/docs/add-react-to-an-existing-app.html', name: 'React: add React to an existing app'},
       {link: 'https://survivejs.com/webpack/appendices/comparison/', name: 'comparison of build tools'}
     ],
@@ -76,8 +75,7 @@ const data = {
   },
   'continuous delivery': {
     art: false,
-
-  links: [
+    links: [
       {link: 'https://devops.com/continuous-delivery-pipeline/', name: 'devops.com'}
     ],
     tags: ['production', 'config']
@@ -85,8 +83,7 @@ const data = {
   'modules (nodejs)': {
 
     art: false,
-
-  links: [
+    links: [
       {link: 'https://www.w3schools.com/nodejs/nodejs_modules.asp', name: 'w3schools'},
       {link: 'http://whatis.techtarget.com/definition/module', name: 'whatis.techtarget.com'}
     ],
@@ -161,36 +158,28 @@ const data = {
   },
   'dry': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://en.wikipedia.org/wiki/Don%27t_repeat_yourself', name: 'wikipedia'}
     ],
     tags: ['theory', 'general']
   },
   'single responsibility principle': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://en.wikipedia.org/wiki/Single_responsibility_principle', name: 'wikipedia'}
     ],
     tags: ['theory', 'general']
   },
   'scalability': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://en.wikipedia.org/wiki/Scalability', name: 'wikipedia'}
     ],
     tags: ['theory', 'general']
   },
   'single source of truth': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://en.wikipedia.org/wiki/Single_source_of_truth', name: 'wikipedia'},
       {link: 'https://www.computer.org/csdl/mags/so/2015/04/mso2015040018.pdf', name: 'Gerard J. Holzmann'}
     ],
@@ -198,45 +187,35 @@ links: [
   },
   'url': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://en.wikipedia.org/wiki/URL', name: 'wikipedia'}
     ],
     tags: ['general']
   },
   'uri': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://en.wikipedia.org/wiki/Uniform_Resource_Identifier', name: 'wikipedia'}
     ],
     tags: ['general']
   },
   'natural language processing': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://en.wikipedia.org/wiki/Natural_language_processing', name: 'wikipedia'}
     ],
     tags: ['ai']
   },
   'lint': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://en.wikipedia.org/wiki/Lint_(software)', name: 'wikipedia'}
     ],
     tags: ['general']
   },
   'progressive web app': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://developers.google.com/web/progressive-web-apps/', name: 'developers.google.com'},
       {link: 'https://en.wikipedia.org/wiki/Progressive_web_app', name: 'wikipedia'}
     ],
@@ -244,9 +223,7 @@ links: [
   },
   'service worker': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://developers.google.com/web/fundamentals/primers/service-workers/', name: 'developers.googles.com - fundamentals - service workers'},
       {link: 'https://developers.google.com/web/ilt/pwa/introduction-to-service-worker', name: 'developers.google.com - pwa - introduction to service workers'}
     ],
@@ -254,45 +231,35 @@ links: [
   },
   'web app manifest': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://developers.google.com/web/fundamentals/web-app-manifest/', name: 'developers.google.com'}
     ],
     tags: ['general', 'production']
   },
   'es6 import': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://stackoverflow.com/questions/36795819/when-should-i-use-curly-braces-for-es6-import/36796281#36796281', name: 'stack overflow'}
     ],
     tags: ['front', 'js']
   },
   'higher order function': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://en.wikipedia.org/wiki/Higher-order_function', name: 'wikipedia'}
     ],
     tags: ['theory']
   },
   'decorators': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841', name: 'medium.com'}
     ],
     tags: ['js', 'python']
   },
   'webpack': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://webpack.js.org/concepts/', name: 'webpack.js.org'},
       {link: 'https://survivejs.com/webpack/what-is-webpack/', name: 'survivejs.com - what is webpack'},
       {link: 'https://blog.andrewray.me/webpack-when-to-use-and-why/', name: 'blog.andrewray.me'}
@@ -301,9 +268,7 @@ links: [
   },
   'bundling': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://reactjs.org/docs/code-splitting.html', name: 'reactjs.org - code splitting'},
       {link: 'https://webpack.js.org/', name: 'webpacks.js.org'},
       {link: 'http://browserify.org/', name: 'browserify.org'}
@@ -312,42 +277,35 @@ links: [
   },
   'code editor (text editor)': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://www.codeschool.com/beginners-guide-to-web-development/choosing-an-ide-or-text-editor', name: 'codeschool.com - choosing and IDE or text editor'}
     ],
     tags: ['basics']
   },
   'integrated development environment': {
     art: false,
-
-
-links: [
+    links: [
       {link: 'https://www.codeschool.com/beginners-guide-to-web-development/choosing-an-ide-or-text-editor', name: 'codeschool.com - choosing and IDE or text editor'}
     ],
     tags: ['basics']
   },
   'debugging': {
     art: false,
-
-  links: [
+    links: [
       {link: 'https://www.codeschool.com/beginners-guide-to-web-development/choosing-an-ide-or-text-editor', name: 'codeschool - choosing and IDE or text editor'}
     ],
     tags: ['basics']
   },
   'deploying': {
     art: false,
-
-  links: [
+    links: [
       {link: '', name: ''}
     ],
     tags: ['basics']
   },
   'html': {
     art: false,
-
-  links: [
+    links: [
       {link: 'https://en.wikipedia.org/wiki/HTML', name: 'wikipedia'},
       {link: 'https://www.codecademy.com/learn/learn-html', name: 'codecademy course'}
     ],
@@ -355,8 +313,7 @@ links: [
   },
   'css (cascading style sheets)': {
     art: false,
-
-  links: [
+    links: [
       {link: 'https://en.wikipedia.org/wiki/Cascading_Style_Sheets', name: 'wikipedia'},
       {link: 'https://www.codecademy.com/learn/learn-css', name: 'codecademy course'}
     ],
@@ -404,8 +361,7 @@ links: [
   },
   'code splitting': {
     art: false,
-
-  links: [
+    links: [
       {link: 'https://reactjs.org/docs/code-splitting.html', name: 'reactjs.org - code splitting'},
       {link: 'https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#code-splitting', name: 'create-react-app documentation'}
     ],
@@ -413,8 +369,7 @@ links: [
   },
   'accessibility': {
     art: false,
-
-  links: [
+    links: [
       {link: 'https://www.w3.org/WAI/intro/accessibility.php', name: 'w3.org - accessibility'},
       {link: 'https://reactjs.org/docs/accessibility.html', name: 'reactjs.org - accessibility'}
     ],
@@ -422,16 +377,14 @@ links: [
   },
   'redux': {
     art: false,
-
-  links: [
+    links: [
       {link: 'https://redux.js.org/', name: 'redux.js.org'}
     ],
     tags: ['front', 'js', 'back']
   },
   'pure functions': {
     art: false,
-
-  links: [
+    links: [
       {link: 'https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976', name: 'medium'},
       {link: 'https://reactjs.org/docs/components-and-props.html', name: 'reactjs.org - components and props'}
     ],
@@ -439,16 +392,14 @@ links: [
   },
   'in-memory database': {
     art: false,
-
-  links: [
+    links: [
       {link: 'https://en.wikipedia.org/wiki/In-memory_database', name: 'wikipedia'}
     ],
     tags: ['theory', 'back']
   },
   'i18n': {
     art: false,
-
-  links: [
+    links: [
       {link: 'https://en.wikipedia.org/wiki/Internationalization_and_localization', name: 'wikipedia'},
       {link: 'https://react.i18next.com/', name: 'react-i18next ex of a tool helping you i18n-ing your app'}
     ],
@@ -456,8 +407,7 @@ links: [
   },
   'universal javascript': {
     art: false,
-
-  links: [
+    links: [
       {link: 'https://medium.com/monitisemea/isomorphic-universal-javascript-496dc8c4341a', name: 'medium'}
     ],
     tags: ['js', 'front', 'back']
@@ -617,6 +567,20 @@ links: [
     art: true,
     links: [
       {link: 'https://hackernoon.com/10-react-mini-patterns-c1da92f068c5', name: 'hackernoon.com - 10 React mini-patterns'}
+    ],
+    tags: ['react']
+  },
+  'react router tutorial': {
+    art: true,
+    links: [
+      {link: 'https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf', name: 'medium - A simple React Router v4 tutorial'}
+    ],
+    tags: ['react']
+  },
+  'presentational and container components': {
+    art: true,
+    links: [
+      {link: 'https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0', name: 'medium - Dan Abramov - Presentational and Container Components'}
     ],
     tags: ['react']
   }
