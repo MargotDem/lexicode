@@ -38,6 +38,8 @@ class EntriesContainer extends BaseContainer {
       tags.push(tagName)
     }
 
+    var art = data[title]['art']
+
     /*
     finally pass the data of given entry to an Entry instance
     (along with the Main component's state changing searchByTag function passed
@@ -49,6 +51,7 @@ class EntriesContainer extends BaseContainer {
         title={title}
         text={text}
         links={links}
+        art={art}
         tags={tags}
         onClick={onClick}
       />

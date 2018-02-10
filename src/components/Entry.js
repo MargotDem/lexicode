@@ -20,7 +20,7 @@ class Entry extends Component {
   }
 
   render () {
-    let { tags, title, text, links } = this.props
+    let { tags, title, text, links, art } = this.props
     const tagButtons = []
 
     const tagNames = tags
@@ -41,6 +41,7 @@ class Entry extends Component {
       )
     }
 
+    const isArt = art ? ' entry__text_lightgray' : ''
     return (
       <div className='entry' id={title[0]} ref={title[0]}>
 
@@ -53,7 +54,7 @@ class Entry extends Component {
           </div>
         </div>
 
-        <div className='entry__text'>
+        <div className={'entry__text' + isArt}>
           {renderHTML(text)}
         </div>
 

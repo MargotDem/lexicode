@@ -45,6 +45,10 @@
     letter-spacing: 1px;
 }
 
+.entry__text_lightgray {
+  color: silver;
+}
+
 
 @media (min-width: 425px) and (max-width: 768px) {
   .entry {
