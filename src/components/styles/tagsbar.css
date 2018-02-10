@@ -55,7 +55,7 @@
 }
 
 .tags-bar__button_back {
-    background-color: #65c7d8;
+    background-color: #83cedb;
 }
 
 .tags-bar__button_ai {
@@ -76,4 +76,8 @@
 
 .tags-bar__button_basics {
     background-color: #c65555;
+}
+
+.tags-bar__button_react {
+    background-color: #61dafb;
 }

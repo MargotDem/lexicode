@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import './styles/tagsbar.css'
 
-const buttons = [
+const BUTTONS = [
   'basics',
   'front',
   'js',
@@ -14,7 +14,8 @@ const buttons = [
   'theory',
   'ai',
   'config',
-  'general'
+  'general',
+  'react'
 ]
 
 class TagsBar extends Component {
@@ -37,7 +38,7 @@ class TagsBar extends Component {
     return (
       <div className='tags-bar'>
         {
-          buttons.map((item, index) => {
+          BUTTONS.map((item, index) => {
             return (
               <button
                 key={index}
