@@ -386,7 +386,8 @@ const data = {
     art: false,
     links: [
       {link: 'https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976', name: 'medium'},
-      {link: 'https://reactjs.org/docs/components-and-props.html', name: 'reactjs.org - components and props'}
+      {link: 'https://reactjs.org/docs/components-and-props.html', name: 'reactjs.org - components and props'},
+      {link: 'http://eloquentjavascript.net/03_functions.html#pure', name: 'eloquentjavascript.net - great book on JS'}
     ],
     tags: ['theory']
   },
@@ -583,6 +584,13 @@ const data = {
       {link: 'https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0', name: 'medium - Dan Abramov - Presentational and Container Components'}
     ],
     tags: ['react']
+  },
+  'recursion': {
+    art: false,
+    links: [
+      {link: 'http://eloquentjavascript.net/03_functions.html#h_jxl1p970Fy', name: 'eloquentjavascript.net - great book on JS'}
+    ],
+    tags: ['theory']
   }
 }
 
