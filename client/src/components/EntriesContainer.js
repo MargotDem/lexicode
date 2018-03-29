@@ -1,8 +1,7 @@
-/* global fetch */
-
 import React, { Component } from 'react'
-
 import Entry from './Entry'
+
+import axios from 'axios'
 
 import './styles/entriescontainer.css'
 
@@ -14,29 +13,13 @@ class EntriesContainer extends Component {
     }
   }
 
-  // componentDidMount () {
-  //   this.callApi()
-  //     .then(res => this.setState({ entries: res }))
-  //     .catch(err => console.log(err))
-  // }
-  //
-  // async callApi () {
-  //   const response = await fetch('/api/entries')
-  //   // const body = await response.json()
-  //   // if (response.status !== 200) throw Error(body.message)
-  //
-  //   return response
-  // }
-
   componentDidMount () {
-    /* fetch API in action */
-    fetch('/api/entries')
-      .then(response => {
-        return response.json()
-      })
+    axios.get('http://localhost:5002/api/entries')
       .then(entries => {
-      // Fetched product is stored in the state
-        this.setState({ entries: entries })
+        this.setState({ entries: entries.data })
+      })
+      .catch(function (error) {
+        console.log(error)
       })
   }
 
@@ -58,7 +41,7 @@ class EntriesContainer extends Component {
                   key={entry.id}
                   title={entry.name}
                   text={text}
-                  links={null}
+                  links={entry.links}
                   art={entry.isArticle}
                   tags={tags}
                   onClick={onClick}
@@ -74,3 +57,29 @@ class EntriesContainer extends Component {
 }
 
 export default EntriesContainer
+
+/* this works */
+// componentDidMount () {
+//   this.callApi()
+//     .then(res => this.setState({ entries: res }))
+//     .catch(err => console.log(err))
+// }
+//
+// async callApi () {
+//   const response = await fetch('/api/entries')
+//   const body = await response.json()
+//   if (response.status !== 200) throw Error(body.message)
+//
+//   return body
+// }
+
+/* this worked too */
+
+// fetch('/api/entries')
+//   .then(response => {
+//     return response.json()
+//   })
+//   .then(entries => {
+//   // Fetched product is stored in the state
+//     this.setState({ entries: entries })
+//   })

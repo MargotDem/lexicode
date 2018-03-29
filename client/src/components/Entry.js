@@ -58,7 +58,7 @@ class Entry extends Component {
         </div>
 
         <div className='entry__links'>
-          {links}
+          {renderHTML(links)}
         </div>
 
       </div>

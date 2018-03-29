@@ -15,6 +15,7 @@ var con = mysql.createConnection({
 })
 
 app.get('/api/entries', (req, res) => {
+  res.set('Access-Control-Allow-Origin', 'http://localhost:3000')
   con.connect(function (err) {
     // getting rid of this makes the disturbing error disappear ha ha ha what is life
     // if (err) throw err
