@@ -1,21 +1,29 @@
 {
   "name": "lexicon",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "i18next": "^10.3.0",
-    "i18next-xhr-backend": "^1.5.1",
-    "mysql": "^2.15.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-i18next": "^7.3.1",
-    "react-render-html": "^0.6.0",
-    "react-scripts": "1.0.17"
-  },
+  "version": "1.0.0",
+  "description": "notes on code related topics",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MargotDem/lexicode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MargotDem/lexicode/issues"
+  },
+  "homepage": "https://github.com/MargotDem/lexicode#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
   }
 }
