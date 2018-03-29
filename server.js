@@ -1,3 +1,5 @@
+// import CONFIG from './config.js'
+
 const express = require('express')
 
 const app = express()
