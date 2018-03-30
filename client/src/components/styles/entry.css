@@ -47,6 +47,13 @@
   color: silver;
 }
 
+.delete-button {
+  color: #61cec7;
+}
+
+.delete-button:hover {
+  cursor: pointer;
+}
 
 @media (min-width: 425px) and (max-width: 768px) {
   .entry {

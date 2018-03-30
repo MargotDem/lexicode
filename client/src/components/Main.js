@@ -6,6 +6,7 @@ import EntriesContainer from './EntriesContainer'
 import ScrollButton from './ScrollButton'
 import ShowAllButton from './ShowAllButton'
 import ToggleLanguage from './ToggleLanguage'
+import AddForm from './AddForm'
 
 import './styles/main.css'
 
@@ -15,7 +16,8 @@ class Main extends Component {
     this.state = {
       displayAll: true,
       tagToDisplay: '',
-      language: 'en'
+      language: 'en',
+      showAddForm: false
     }
     this.searchByTag = this.searchByTag.bind(this)
     this.displayAllEntries = this.displayAllEntries.bind(this)
@@ -43,11 +45,20 @@ class Main extends Component {
     })
   }
 
+  handleAdd () {
+    console.log('lets add')
+    this.setState({
+      showAddForm: true
+    })
+  }
+
   render () {
-    let { displayAll, tagToDisplay, language } = this.state
+    let { displayAll, tagToDisplay, language, showAddForm } = this.state
     return (
 
       <div className='my-main'>
+
+        { showAddForm && <AddForm /> }
 
         <TagsBar
           onClick={this.searchByTag}
@@ -55,6 +66,8 @@ class Main extends Component {
         <AlphabetBar />
 
         <ToggleLanguage changeLanguage={this.changeLanguage} language={language} />
+
+        <span className='add-button' onClick={() => { this.handleAdd() }}>Add an entry</span>
 
         <EntriesContainer
           displayAll={displayAll}

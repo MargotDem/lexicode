@@ -14,17 +14,17 @@ class EntriesContainer extends Component {
   }
 
   componentDidMount () {
-    axios.get('http://localhost:5002/api/entries')
+    console.log('mounted')
+    axios.get('/api/entries')
       .then(entries => {
         this.setState({ entries: entries.data })
       })
-      .catch(function (error) {
+      .catch(error => {
         console.log(error)
       })
   }
 
   render () {
-    console.log(this.state.entries)
     let { displayAll, tagToDisplay, onClick, language } = this.props
     let { entries } = this.state
 
@@ -38,6 +38,7 @@ class EntriesContainer extends Component {
             if (displayAll || tags.indexOf(tagToDisplay) > -1) {
               return (
                 <Entry
+                  id={entry.id}
                   key={entry.id}
                   title={entry.name}
                   text={text}

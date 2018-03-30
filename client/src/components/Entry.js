@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import renderHTML from 'react-render-html'
+import axios from 'axios'
 
 import './styles/entry.css'
 
@@ -19,8 +20,18 @@ class Entry extends Component {
     this.props.onClick(tag)
   }
 
+  handleDelete (id) {
+    axios.delete('/api/entries/' + id)
+      .then(response => {
+        console.log(response)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+
   render () {
-    let { tags, title, text, links, art } = this.props
+    let { id, tags, title, text, links, art } = this.props
 
     const isArt = art ? ' entry__text_lightgray' : ''
 
@@ -34,7 +45,7 @@ class Entry extends Component {
           <div className='entry__tags'>
             {
               tags.map(tag => {
-                if (tag !== null) {
+                if (tag !== '-') {
                   return (
                     <button
                       key={tag}
@@ -55,6 +66,7 @@ class Entry extends Component {
 
         <div className={'entry__text' + isArt}>
           {renderHTML(text)}
+          <span className='delete-button' onClick={() => { this.handleDelete(id) }}>Delete</span>
         </div>
 
         <div className='entry__links'>

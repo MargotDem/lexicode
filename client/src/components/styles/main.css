@@ -2,6 +2,14 @@
   width: 100vw;
 }
 
+.add-button {
+  color: #61cec7;
+}
+
+.add-button:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 800px) {
   .mobile-footer {
     background-color: gainsboro;

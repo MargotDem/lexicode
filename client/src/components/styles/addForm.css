@@ -1,0 +1,30 @@
+.add-form-container {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-form-card {
+  height: 600px;
+  width: 450px;
+  background: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-form {
+
+}
+
+.add-form input, textarea {
+  outline: none;
+  display: block;
+  margin: 15px 0px;
+}
