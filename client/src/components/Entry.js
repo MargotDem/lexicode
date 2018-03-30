@@ -28,6 +28,7 @@ class Entry extends Component {
       .catch(error => {
         console.log(error)
       })
+    window.location.reload()
   }
 
   render () {

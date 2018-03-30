@@ -24,6 +24,7 @@ export default class AddForm extends Component {
       .catch(error => {
         console.log(error)
       })
+    window.location.reload()
   }
 
   handleChange (e) {
@@ -41,7 +42,7 @@ export default class AddForm extends Component {
   render () {
     return (
       <div className='add-form-container'>
-        <div className='add-form-modal' onClick={this.handleCloseClick}></div>
+        <div className='add-form-modal' onClick={this.handleCloseClick} />
         <div className='add-form-card'>
           <form method='post' className='add-form'>
             <input type='text' placeholder='Title' name='name' onChange={this.handleChange} />
