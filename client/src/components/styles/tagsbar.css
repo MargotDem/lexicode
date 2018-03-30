@@ -81,3 +81,9 @@
 .tags-bar__button_react {
     background-color: #61dafb;
 }
+
+@media (max-width: 375px) {
+  .tags-bar__button {
+    margin: 5px;
+  }
+}

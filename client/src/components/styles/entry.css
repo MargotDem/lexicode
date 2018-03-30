@@ -1,14 +1,14 @@
 
 .entry {
     margin-bottom: 130px;
-    width: 50%;
+    width: 45%;
 }
 
 .entry__header {
     color: #ddb1ad;
     font-family: teko;
     letter-spacing: 2px;
-    font-size: 24px;
+    font-size: 26px;
     text-shadow: 1px 1px #E8E8E8;
     width: 100%;
     display: flex;
@@ -37,8 +37,6 @@
 }
 
 .entry__text {
-    padding-left: 40px;
-    padding-right: 40px;
     padding-top: 50px;
     line-height: 30px;
     word-spacing: 3px;
@@ -70,6 +68,7 @@
 @media (max-width: 425px) {
   .entry {
     margin-bottom: 50px;
+    width: 90%;
   }
   .entry__title {
     width: 100%;
