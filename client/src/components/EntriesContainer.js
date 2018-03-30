@@ -33,7 +33,7 @@ class EntriesContainer extends Component {
         {
           entries.map((entry) => {
             let tags = [entry.tag_1, entry.tag_2, entry.tag_3]
-            let text = language === 'en' ? entry.text : (entry.translation_fr !== '' ? entry.translation_fr : entry.text)
+            let text = language === 'en' ? entry.text : (entry.translation_fr !== '-' ? entry.translation_fr : entry.text)
 
             if (displayAll || tags.indexOf(tagToDisplay) > -1) {
               return (
