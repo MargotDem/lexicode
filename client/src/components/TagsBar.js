@@ -15,7 +15,8 @@ const BUTTONS = [
   'ai',
   'config',
   'general',
-  'react'
+  'react',
+  'database'
 ]
 
 class TagsBar extends Component {

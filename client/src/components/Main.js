@@ -22,6 +22,7 @@ class Main extends Component {
     this.searchByTag = this.searchByTag.bind(this)
     this.displayAllEntries = this.displayAllEntries.bind(this)
     this.changeLanguage = this.changeLanguage.bind(this)
+    this.closeForm = this.closeForm.bind(this)
   }
 
   searchByTag (tag) {
@@ -52,13 +53,19 @@ class Main extends Component {
     })
   }
 
+  closeForm () {
+    this.setState({
+      showAddForm: false
+    })
+  }
+
   render () {
     let { displayAll, tagToDisplay, language, showAddForm } = this.state
     return (
 
       <div className='my-main'>
 
-        { showAddForm && <AddForm /> }
+        { showAddForm && <AddForm closeForm={this.closeForm} /> }
 
         <TagsBar
           onClick={this.searchByTag}
@@ -67,7 +74,9 @@ class Main extends Component {
 
         <ToggleLanguage changeLanguage={this.changeLanguage} language={language} />
 
-        <span className='add-button' onClick={() => { this.handleAdd() }}>Add an entry</span>
+        <div className='add-button-container'>
+          <span className='add-button' onClick={() => { this.handleAdd() }}>Add an entry</span>
+        </div>
 
         <EntriesContainer
           displayAll={displayAll}

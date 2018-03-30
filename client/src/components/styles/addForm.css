@@ -4,10 +4,19 @@
   bottom: 0px;
   left: 0px;
   right: 0px;
-  background: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
+  /* z-index: 400; */
+}
+
+.add-form-modal {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .add-form-card {
@@ -17,14 +26,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 410;
 }
 
 .add-form {
 
 }
 
-.add-form input, textarea {
+.add-form input, textarea, select {
   outline: none;
   display: block;
   margin: 15px 0px;
+  background: whitesmoke;
+  font-size: 17px;
+}
+
+.add-form input {
+  border: none;
+  border-bottom: solid 1px gainsboro;
+  /* height: 30px; */
+  /* background: gainsboro; */
+}
+
+.add-form textarea {
+  border: solid 1px gainsboro;
+  height: 90px;
+  width: 300px;
+}
+
+.add-form select {
+  border: solid 1px gainsboro;
 }

@@ -82,6 +82,10 @@
     background-color: #61dafb;
 }
 
+.tags-bar__button_database {
+  background: #6cc440;
+}
+
 @media (max-width: 375px) {
   .tags-bar__button {
     margin: 5px;

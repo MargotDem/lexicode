@@ -2,6 +2,13 @@
   width: 100vw;
 }
 
+.add-button-container {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
 .add-button {
   color: #61cec7;
 }

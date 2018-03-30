@@ -11,6 +11,7 @@ export default class AddForm extends Component {
     })
     this.handleChange = this.handleChange.bind(this)
     this.handleAdd = this.handleAdd.bind(this)
+    this.handleCloseClick = this.handleCloseClick.bind(this)
   }
 
   handleAdd () {
@@ -33,9 +34,14 @@ export default class AddForm extends Component {
     })
   }
 
+  handleCloseClick () {
+    this.props.closeForm()
+  }
+
   render () {
     return (
       <div className='add-form-container'>
+        <div className='add-form-modal' onClick={this.handleCloseClick}></div>
         <div className='add-form-card'>
           <form method='post' className='add-form'>
             <input type='text' placeholder='Title' name='name' onChange={this.handleChange} />
@@ -100,7 +106,7 @@ export default class AddForm extends Component {
 
             <textarea name='translationFr' placeholder='The French translation' onChange={this.handleChange} />
 
-            <input type='text' placeholder='Links' name='links' onChange={this.handleChange} />
+            <textarea name='links' placeholder='Links' onChange={this.handleChange} />
 
             <span className='add-button' onClick={() => { this.handleAdd() }}>Send</span>
           </form>
