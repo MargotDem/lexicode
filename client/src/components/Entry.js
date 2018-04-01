@@ -31,6 +31,10 @@ class Entry extends Component {
     window.location.reload()
   }
 
+  handleEdit (id) {
+    this.props.openForm(id)
+  }
+
   // confirmDelete (id) {
   //   if (window.confirm('Delete this entry ?')) {
   //     this.handleDelete(id)
@@ -74,6 +78,7 @@ class Entry extends Component {
         <div className={'entry__text' + isArt}>
           {renderHTML(text)}
           <span className='delete-button' onClick={() => { this.handleDelete(id) }}>Delete</span>
+          <span className='edit-button' onClick={() => { this.handleEdit(id) }}>Edit</span>
         </div>
 
         <div className='entry__links'>

@@ -22,7 +22,7 @@ class Main extends Component {
     this.searchByTag = this.searchByTag.bind(this)
     this.displayAllEntries = this.displayAllEntries.bind(this)
     this.changeLanguage = this.changeLanguage.bind(this)
-    this.closeForm = this.closeForm.bind(this)
+    this.closeAddForm = this.closeAddForm.bind(this)
   }
 
   searchByTag (tag) {
@@ -46,14 +46,14 @@ class Main extends Component {
     })
   }
 
-  handleAdd () {
+  openAddForm () {
     document.getElementById('body').className = 'noScroll'
     this.setState({
       showAddForm: true
     })
   }
 
-  closeForm () {
+  closeAddForm () {
     document.getElementById('body').className = ''
     this.setState({
       showAddForm: false
@@ -66,7 +66,7 @@ class Main extends Component {
 
       <div className='my-main'>
 
-        { showAddForm && <AddForm closeForm={this.closeForm} /> }
+        { showAddForm && <AddForm closeForm={this.closeAddForm} /> }
 
         <TagsBar
           onClick={this.searchByTag}
@@ -75,10 +75,6 @@ class Main extends Component {
 
         <ToggleLanguage changeLanguage={this.changeLanguage} language={language} />
 
-        <div className='add-button-container'>
-          <span className='add-button' onClick={() => { this.handleAdd() }}>Add an entry</span>
-        </div>
-
         <EntriesContainer
           displayAll={displayAll}
           tagToDisplay={tagToDisplay}
@@ -86,7 +82,7 @@ class Main extends Component {
           language={language}
         />
 
-        <span className='add-button' onClick={() => { this.handleAdd() }}>Add an entry</span>
+        <span className='add-button' onClick={() => { this.openAddForm() }}>Add an entry</span>
 
         <div className='mobile-footer'>
           <ShowAllButton onClick={this.displayAllEntries} />

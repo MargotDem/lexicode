@@ -4,26 +4,40 @@ import axios from 'axios'
 
 import './styles/addForm.css'
 
-export default class AddForm extends Component {
+export default class EditForm extends Component {
   constructor (props) {
     super(props)
     this.state = ({
     })
     this.handleChange = this.handleChange.bind(this)
-    this.handleAdd = this.handleAdd.bind(this)
+    this.handleEdit = this.handleEdit.bind(this)
     this.handleCloseClick = this.handleCloseClick.bind(this)
   }
 
-  handleAdd () {
-    let entry = this.state
-    axios.post('/api/entries', entry)
-      .then(response => {
-        console.log(response)
+  componentDidMount () {
+    console.log('edit form did mount' + this.props.entry)
+    axios.get('/api/entries/' + this.props.entry)
+      .then(entry => {
+        this.setState({
+          entryResult: entry.data
+        })
       })
       .catch(error => {
         console.log(error)
       })
-    window.location.reload()
+  }
+
+  handleEdit () {
+    let entry = this.state
+    console.log(entry)
+    // axios.post('/api/entries', entry)
+    //   .then(response => {
+    //     console.log(response)
+    //   })
+    //   .catch(error => {
+    //     console.log(error)
+    //   })
+    // window.location.reload()
   }
 
   handleChange (e) {
@@ -39,6 +53,7 @@ export default class AddForm extends Component {
   }
 
   render () {
+    console.log(this.state.entryResult)
     return (
       <div className='add-form-container'>
         <div className='add-form-modal' onClick={this.handleCloseClick} />
@@ -113,7 +128,7 @@ export default class AddForm extends Component {
               defaultValue="<a target='_blank' rel='noopener noreferrer' href=''></a><br />"
             />
 
-            <span className='send-button' onClick={() => { this.handleAdd() }}>Send</span>
+            <span className='send-button' onClick={() => { this.handleEdit() }}>Send</span>
           </form>
         </div>
       </div>

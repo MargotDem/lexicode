@@ -47,11 +47,12 @@
   color: silver;
 }
 
-.delete-button {
+.delete-button, .edit-button {
   color: #61cec7;
+  margin: 0px 5px;
 }
 
-.delete-button:hover {
+.delete-button:hover, .edit-button:hover {
   cursor: pointer;
 }
 

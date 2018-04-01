@@ -66,3 +66,11 @@
 .linksTextarea {
   height: 90px !important;
 }
+
+.send-button {
+  color: #61cec7;
+}
+
+.send-button:hover {
+  cursor: pointer;
+}
