@@ -31,6 +31,12 @@ class Entry extends Component {
     window.location.reload()
   }
 
+  // confirmDelete (id) {
+  //   if (window.confirm('Delete this entry ?')) {
+  //     this.handleDelete(id)
+  //   }
+  // }
+
   render () {
     let { id, tags, title, text, links, art } = this.props
 

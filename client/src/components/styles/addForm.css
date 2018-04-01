@@ -20,8 +20,8 @@
 }
 
 .add-form-card {
-  height: 600px;
-  width: 450px;
+  height: 700px;
+  width: 550px;
   background: whitesmoke;
   display: flex;
   justify-content: center;
@@ -41,6 +41,11 @@
   font-size: 17px;
 }
 
+.add-form select {
+  display: inline;
+  margin: 6px;
+}
+
 .add-form input {
   border: none;
   border-bottom: solid 1px gainsboro;
@@ -50,10 +55,14 @@
 
 .add-form textarea {
   border: solid 1px gainsboro;
-  height: 90px;
-  width: 300px;
+  height: 180px;
+  width: 450px;
 }
 
 .add-form select {
   border: solid 1px gainsboro;
+}
+
+.linksTextarea {
+  height: 90px !important;
 }

@@ -47,13 +47,14 @@ class Main extends Component {
   }
 
   handleAdd () {
-    console.log('lets add')
+    document.getElementById('body').className = 'noScroll'
     this.setState({
       showAddForm: true
     })
   }
 
   closeForm () {
+    document.getElementById('body').className = ''
     this.setState({
       showAddForm: false
     })
@@ -84,6 +85,9 @@ class Main extends Component {
           onClick={this.searchByTag}
           language={language}
         />
+
+        <span className='add-button' onClick={() => { this.handleAdd() }}>Add an entry</span>
+
         <div className='mobile-footer'>
           <ShowAllButton onClick={this.displayAllEntries} />
           <ScrollButton />

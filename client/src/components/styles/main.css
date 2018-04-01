@@ -11,6 +11,9 @@
 
 .add-button {
   color: #61cec7;
+  position: fixed;
+  left: 25px;
+  bottom: 114px;
 }
 
 .add-button:hover {

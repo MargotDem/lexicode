@@ -1,26 +1,4 @@
 const data = {
-  'npm': {
-    art: false,
-    links: [
-      {link: 'https://www.w3schools.com/nodejs/nodejs_npm.asp', name: 'w3schools'},
-      {link: 'https://www.npmjs.com/', name: 'npmjs.com'}
-    ],
-    tags: ['front', 'js', 'config']
-  },
-  'span': {
-    art: false,
-    links: [
-      {link: 'https://www.w3schools.com/tags/tag_span.asp', name: 'w3schools'}
-    ],
-    tags: ['css']
-  },
-  'package': {
-    art: false,
-    links: [
-      {link: 'https://www.w3schools.com/nodejs/nodejs_npm.asp', name: 'w3schools'}
-    ],
-    tags: ['front', 'js', 'config']
-  },
   'nodejs': {
     art: false,
     links: [

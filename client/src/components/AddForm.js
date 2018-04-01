@@ -107,7 +107,9 @@ export default class AddForm extends Component {
 
             <textarea name='translationFr' placeholder='The French translation' onChange={this.handleChange} />
 
-            <textarea name='links' placeholder='Links' onChange={this.handleChange} />
+            <textarea className='linksTextarea' name='links' placeholder='Links' onChange={this.handleChange}>
+              target='_blank' rel='noopener noreferrer' href=''
+            </textarea>
 
             <span className='add-button' onClick={() => { this.handleAdd() }}>Send</span>
           </form>

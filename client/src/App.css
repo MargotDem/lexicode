@@ -21,6 +21,10 @@
   color: #A8A8A8;
 }
 
+body.noScroll {
+  overflow: hidden;
+}
+
 @media (min-width: 801px) {
   .bottom-button {
     color: white;
