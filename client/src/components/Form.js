@@ -3,20 +3,22 @@ import React, { Component } from 'react'
 import './styles/form.css'
 
 export default class Form extends Component {
-  handleSubmit () {
-    this.props.handleSubmit()
-  }
-
-  handleChange (e) {
-    this.props.handleChange(e)
-  }
-
-  handleCloseClick () {
-    this.props.closeForm()
-  }
-
   render () {
-    let { isEdit, name, isArticle, tag1, tag2, tag3, text, translationFr, links, closeForm, handleChange, handleSubmit } = this.props
+    let {
+      isEdit,
+      name,
+      isArticle,
+      tag1,
+      tag2,
+      tag3,
+      text,
+      translationFr,
+      links,
+      closeForm,
+      handleChange,
+      handleSubmit
+    } = this.props
+
     return (
       <div className='form-container'>
         <div className='form-modal' onClick={closeForm} />
@@ -30,7 +32,12 @@ export default class Form extends Component {
               value={isEdit && name}
             />
 
-            <input type='checkbox' name='isArticle' onChange={handleChange} checked={isEdit && isArticle} />
+            <input
+              type='checkbox'
+              name='isArticle'
+              onChange={handleChange}
+              checked={isEdit && isArticle}
+            />
 
             <select name='tag1' onChange={handleChange}>
               <option value={isEdit ? tag1 : '-'}>{isEdit ? tag1 : '-'}</option>
