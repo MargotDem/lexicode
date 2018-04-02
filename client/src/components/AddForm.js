@@ -110,7 +110,7 @@ export default class AddForm extends Component {
               className='linksTextarea'
               name='links'
               onChange={this.handleChange}
-              defaultValue="<a target='_blank' rel='noopener noreferrer' href=''></a><br />"
+              defaultValue="<a target='_blank' rel='noopener noreferrer' href=''></a><br>"
             />
 
             <span className='send-button' onClick={() => { this.handleAdd() }}>Send</span>

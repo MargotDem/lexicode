@@ -52,6 +52,7 @@ class Entry extends Component {
         <div className='entry__header'>
           <div className='entry__title'>
             {title}
+            <span className='delete-button' onClick={() => { this.handleDelete(id) }}>Delete</span>
           </div>
           <div className='entry__tags'>
             {
@@ -77,7 +78,6 @@ class Entry extends Component {
 
         <div className={'entry__text' + isArt}>
           {renderHTML(text)}
-          <span className='delete-button' onClick={() => { this.handleDelete(id) }}>Delete</span>
           <span className='edit-button' onClick={() => { this.handleEdit(id) }}>Edit</span>
         </div>
 

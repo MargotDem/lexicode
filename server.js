@@ -1,5 +1,6 @@
 // import CONFIG from './config.js'
-var bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
+
 const express = require('express')
 
 const app = express()
