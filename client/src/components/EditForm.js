@@ -14,12 +14,20 @@ export default class EditForm extends Component {
     this.handleCloseClick = this.handleCloseClick.bind(this)
   }
 
-  componentDidMount () {
-    console.log('edit form did mount' + this.props.entry)
+  componentWillMount () {
     axios.get('/api/entries/' + this.props.entry)
       .then(entry => {
+        let entryData = entry.data[0]
         this.setState({
-          entryResult: entry.data
+          id: entryData['id'],
+          name: entryData['name'],
+          isArticle: entryData['isArticle'],
+          tag1: entryData['tag_1'],
+          tag2: entryData['tag_2'],
+          tag3: entryData['tag_3'],
+          text: entryData['text'],
+          translationFr: entryData['translation_fr'],
+          links: entryData['links']
         })
       })
       .catch(error => {
@@ -29,15 +37,17 @@ export default class EditForm extends Component {
 
   handleEdit () {
     let entry = this.state
+    let { id } = this.state
     console.log(entry)
-    // axios.post('/api/entries', entry)
-    //   .then(response => {
-    //     console.log(response)
-    //   })
-    //   .catch(error => {
-    //     console.log(error)
-    //   })
-    // window.location.reload()
+    console.log(id)
+    axios.put('/api/entries/' + id, entry)
+      .then(response => {
+        console.log(response)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    window.location.reload()
   }
 
   handleChange (e) {
@@ -53,18 +63,23 @@ export default class EditForm extends Component {
   }
 
   render () {
-    console.log(this.state.entryResult)
+    let { name, isArticle, tag1, tag2, tag3, text, translationFr, links } = this.state
     return (
       <div className='add-form-container'>
         <div className='add-form-modal' onClick={this.handleCloseClick} />
         <div className='add-form-card'>
           <form method='post' className='add-form'>
-            <input type='text' placeholder='Title' name='name' onChange={this.handleChange} />
+            <input
+              type='text'
+              name='name'
+              onChange={this.handleChange}
+              value={name}
+            />
 
-            <input type='checkbox' name='isArticle' onChange={this.handleChange} />
+            <input type='checkbox' name='isArticle' onChange={this.handleChange} checked={isArticle} />
 
             <select name='tag1' onChange={this.handleChange}>
-              <option value='' />
+              <option value={tag1}>{tag1}</option>
               <option value='ai'>ai</option>
               <option value='back'>back</option>
               <option value='basics'>basics</option>
@@ -82,7 +97,7 @@ export default class EditForm extends Component {
             </select>
 
             <select name='tag2' onChange={this.handleChange}>
-              <option value='' />
+              <option value={tag2}>{tag2}</option>
               <option value='ai'>ai</option>
               <option value='back'>back</option>
               <option value='basics'>basics</option>
@@ -100,7 +115,7 @@ export default class EditForm extends Component {
             </select>
 
             <select name='tag3' onChange={this.handleChange}>
-              <option value='' />
+              <option value={tag3}>{tag3}</option>
               <option value='ai'>ai</option>
               <option value='back'>back</option>
               <option value='basics'>basics</option>
@@ -117,15 +132,15 @@ export default class EditForm extends Component {
               <option value='theory'>theory</option>
             </select>
 
-            <textarea name='text' placeholder='The text' onChange={this.handleChange} />
+            <textarea name='text' placeholder='The text' onChange={this.handleChange} value={text} />
 
-            <textarea name='translationFr' placeholder='The French translation' onChange={this.handleChange} />
+            <textarea name='translationFr' placeholder='The French translation' onChange={this.handleChange} value={translationFr} />
 
             <textarea
               className='linksTextarea'
               name='links'
               onChange={this.handleChange}
-              defaultValue="<a target='_blank' rel='noopener noreferrer' href=''></a><br>"
+              value={links}
             />
 
             <span className='send-button' onClick={() => { this.handleEdit() }}>Send</span>
