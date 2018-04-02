@@ -1,0 +1,120 @@
+import React, { Component } from 'react'
+
+import './styles/form.css'
+
+export default class Form extends Component {
+  handleSubmit () {
+    this.props.handleSubmit()
+  }
+
+  handleChange (e) {
+    this.props.handleChange(e)
+  }
+
+  handleCloseClick () {
+    this.props.closeForm()
+  }
+
+  render () {
+    let { isEdit, name, isArticle, tag1, tag2, tag3, text, translationFr, links, closeForm, handleChange, handleSubmit } = this.props
+    return (
+      <div className='add-form-container'>
+        <div className='add-form-modal' onClick={closeForm} />
+        <div className='add-form-card'>
+          <form method='post' className='add-form'>
+            <input
+              type='text'
+              name='name'
+              onChange={handleChange}
+              placeholder='Title'
+              value={isEdit && name}
+            />
+
+            <input type='checkbox' name='isArticle' onChange={handleChange} checked={isEdit && isArticle} />
+
+            <select name='tag1' onChange={handleChange}>
+              <option value={isEdit ? tag1 : '-'}>{isEdit ? tag1 : '-'}</option>
+              <option value='ai'>ai</option>
+              <option value='back'>back</option>
+              <option value='basics'>basics</option>
+              <option value='config'>config</option>
+              <option value='css'>css</option>
+              <option value='database'>database</option>
+              <option value='front'>front</option>
+              <option value='general'>general</option>
+              <option value='js'>js</option>
+              <option value='php'>php</option>
+              <option value='production'>production</option>
+              <option value='python'>python</option>
+              <option value='react'>react</option>
+              <option value='theory'>theory</option>
+              <option value='-'>-</option>
+            </select>
+
+            <select name='tag2' onChange={handleChange}>
+              <option value={isEdit ? tag2 : '-'}>{isEdit ? tag2 : '-'}</option>
+              <option value='ai'>ai</option>
+              <option value='back'>back</option>
+              <option value='basics'>basics</option>
+              <option value='config'>config</option>
+              <option value='css'>css</option>
+              <option value='database'>database</option>
+              <option value='front'>front</option>
+              <option value='general'>general</option>
+              <option value='js'>js</option>
+              <option value='php'>php</option>
+              <option value='production'>production</option>
+              <option value='python'>python</option>
+              <option value='react'>react</option>
+              <option value='theory'>theory</option>
+              <option value='-'>-</option>
+            </select>
+
+            <select name='tag3' onChange={handleChange}>
+              <option value={isEdit ? tag3 : '-'}>{isEdit ? tag3 : '-'}</option>
+              <option value='ai'>ai</option>
+              <option value='back'>back</option>
+              <option value='basics'>basics</option>
+              <option value='config'>config</option>
+              <option value='css'>css</option>
+              <option value='database'>database</option>
+              <option value='front'>front</option>
+              <option value='general'>general</option>
+              <option value='js'>js</option>
+              <option value='php'>php</option>
+              <option value='production'>production</option>
+              <option value='python'>python</option>
+              <option value='react'>react</option>
+              <option value='theory'>theory</option>
+              <option value='-'>-</option>
+            </select>
+
+            <textarea
+              name='text'
+              placeholder='The text'
+              onChange={handleChange}
+              value={isEdit && text}
+            />
+
+            <textarea
+              name='translationFr'
+              placeholder='The French translation'
+              onChange={handleChange}
+              value={isEdit && translationFr}
+            />
+
+            <textarea
+              className='linksTextarea'
+              name='links'
+              onChange={handleChange}
+              value={isEdit && links}
+              defaultValue="<a target='_blank' rel='noopener noreferrer' href=''></a><br>"
+            />
+
+            <span className='send-button' onClick={() => { handleSubmit() }}>Send</span>
+          </form>
+        </div>
+      </div>
+    )
+  }
+}
