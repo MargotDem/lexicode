@@ -18,10 +18,10 @@ export default class Form extends Component {
   render () {
     let { isEdit, name, isArticle, tag1, tag2, tag3, text, translationFr, links, closeForm, handleChange, handleSubmit } = this.props
     return (
-      <div className='add-form-container'>
-        <div className='add-form-modal' onClick={closeForm} />
-        <div className='add-form-card'>
-          <form method='post' className='add-form'>
+      <div className='form-container'>
+        <div className='form-modal' onClick={closeForm} />
+        <div className='form-card'>
+          <form method='post' className='form'>
             <input
               type='text'
               name='name'

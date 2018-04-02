@@ -1,4 +1,4 @@
-.add-form-container {
+.form-container {
   position: fixed;
   top: 0px;
   bottom: 0px;
@@ -10,7 +10,7 @@
   /* z-index: 400; */
 }
 
-.add-form-modal {
+.form-modal {
   position: fixed;
   top: 0px;
   bottom: 0px;
@@ -19,7 +19,7 @@
   background: rgba(0, 0, 0, 0.4);
 }
 
-.add-form-card {
+.form-card {
   height: 700px;
   width: 550px;
   background: whitesmoke;
@@ -29,11 +29,11 @@
   z-index: 410;
 }
 
-.add-form {
+.form {
 
 }
 
-.add-form input, textarea, select {
+.form input, textarea, select {
   outline: none;
   display: block;
   margin: 15px 0px;
@@ -41,25 +41,25 @@
   font-size: 17px;
 }
 
-.add-form select {
+.form select {
   display: inline;
   margin: 6px;
 }
 
-.add-form input {
+.form input {
   border: none;
   border-bottom: solid 1px gainsboro;
   /* height: 30px; */
   /* background: gainsboro; */
 }
 
-.add-form textarea {
+.form textarea {
   border: solid 1px gainsboro;
   height: 180px;
   width: 450px;
 }
 
-.add-form select {
+.form select {
   border: solid 1px gainsboro;
 }
 
