@@ -26,59 +26,34 @@ var con = mysql.createConnection({
 
 app.get('/api/entries', (req, res) => {
   res.set('Access-Control-Allow-Origin', 'http://localhost:3000')
-
-  // con.connect(function (err) {
-    // getting rid of this makes the disturbing error disappear ha ha ha what is life
-    // edit fri 30/03 weirdd today the request wouldnt work and then i uncommented this
-    // and then it worked and then i recommented it and it still works and is this linked
-    // or not at all wth
-    // if (err) throw err
-    con.query('SELECT * FROM entries ORDER BY name', function (err, result) {
-      if (err) throw err
-      res.send(result)
-    })
-  // })
+  con.query('SELECT * FROM entries ORDER BY name', function (err, result) {
+    if (err) throw err
+    res.send(result)
+  })
 })
 
 app.get('/api/entries/:entry', (req, res) => {
   res.set('Access-Control-Allow-Origin', 'http://localhost:3000')
 
-  // "Tue, 03 Apr 2018 09:02:40 GMT express deprecated req.param(name):
-  // Use req.params, req.body, or req.query instead"
-  let sql = 'SELECT * FROM entries WHERE id = ' + req.param('entry')
-  // con.connect(function (err) {
-    // if (err) throw err
-    con.query(sql, function (err, result) {
-      if (err) throw err
-      res.send(result)
-    })
-  // })
+  let sql = 'SELECT * FROM entries WHERE id = ' + req.params.entry
+  con.query(sql, function (err, result) {
+    if (err) throw err
+    res.send(result)
+  })
 })
 
 app.delete('/api/entries/:entry', (req, res) => {
   res.set('Access-Control-Allow-Origin', 'http://localhost:3000')
 
-  // "Tue, 03 Apr 2018 09:02:40 GMT express deprecated req.param(name):
-  // Use req.params, req.body, or req.query instead"
-  let entryToDelete = req.param('entry')
+  let entryToDelete = req.params.entry
   let sql = 'DELETE FROM entries WHERE id = ' + entryToDelete
-  // res.send(sql)
-  // console.log(sql)
-  // con.connect(function (err) {
-  //   // if (err) throw err
-  //   if (err) {
-  //     console.log(err)
-  //     throw err
-  //   } else {
-      con.query(sql, function (err, result) {
-        if (err) {
-          console.log(err)
-        } else {
-          res.send(result)
-        }
-      })
-  //   }
-  // })
+  con.query(sql, function (err, result) {
+    if (err) {
+      console.log(err)
+    } else {
+      res.send(result)
+    }
+  })
 })
 
 app.post('/api/entries', (req, res) => {
@@ -101,13 +76,10 @@ app.post('/api/entries', (req, res) => {
   values = values.substring(0, values.lastIndexOf(','))
 
   let sql = 'INSERT INTO entries (name, isArticle, tag_1, tag_2, tag_3, text, translation_fr, links) VALUES (' + values + ')'
-  // con.connect(function (err) {
-    // if (err) throw err
-    con.query(sql, function (err, result) {
-      if (err) throw err
-      res.send(result)
-    })
-  // })
+  con.query(sql, function (err, result) {
+    if (err) throw err
+    res.send(result)
+  })
 })
 
 app.put('/api/entries/:entry', (req, res) => {
@@ -122,13 +94,10 @@ app.put('/api/entries/:entry', (req, res) => {
   }
 
   let sql = 'UPDATE entries SET name = "' + name + '", isArticle = "' + isArticle + '", tag_1 = "' + tag1 + '", tag_2 = "' + tag2 + '", tag_3 = "' + tag3 + '", text = "' + text + '", translation_fr = "' + translationFr + '", links = "' + links + '" WHERE id = ' + id
-  // con.connect(function (err) {
-    // if (err) throw err
-    con.query(sql, function (err, result) {
-      if (err) throw err
-      res.send(result)
-    })
-  // })
+  con.query(sql, function (err, result) {
+    if (err) throw err
+    res.send(result)
+  })
 })
 
 app.get('/api/admin', (req, res) => {
@@ -138,13 +107,10 @@ app.get('/api/admin', (req, res) => {
   let password = req.query.password
 
   let sql = 'SELECT * FROM admin WHERE email = "' + email + '" AND password = "' + password + '"'
-  // con.connect(function (err) {
-    // if (err) throw err
-    con.query(sql, function (err, result) {
-      if (err) throw err
-      res.send(result)
-    })
-  // })
+  con.query(sql, function (err, result) {
+    if (err) throw err
+    res.send(result)
+  })
 })
 
 process.on('uncaughtException', function () {
