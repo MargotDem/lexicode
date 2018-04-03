@@ -11,9 +11,18 @@ export default class Form extends Component {
     this.renderAddEditForm = this.renderAddEditForm.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
+
   addLink () {
-    let { linkUrl, linkTitle } = this.state
-    console.log(linkUrl)
+    let { linkUrl, linkTitle, links } = this.state
+    if (links === undefined) {
+      links = ''
+    }
+    links = links + "<a target='_blank' rel='noopener noreferrer' href='" + linkUrl + "'>" + linkTitle + "</a><br>"
+    this.setState({
+      links: links,
+      linkUrl: '',
+      linkTitle: ''
+    })
   }
 
   handleChange (e) {
@@ -24,31 +33,12 @@ export default class Form extends Component {
     })
   }
 
+  // not sure how or why but have to do this for the pre-filled values to work
+  // in edit form (if we get isEdit, name etc directly from props in renderAddEditForm
+  // then the inputs are non modifiable, presumably bc value is set, but this
+  // way it's modifiable anyway (? why?))
   componentWillReceiveProps (nextProps) {
-    let {
-      isEdit,
-      id,
-      name,
-      isArticle,
-      tag1,
-      tag2,
-      tag3,
-      text,
-      translationFr,
-      links
-    } = nextProps
-    this.setState({
-      isEdit: isEdit,
-      id: id,
-      name: name,
-      isArticle: isArticle,
-      tag1: tag1,
-      tag2: tag2,
-      tag3: tag3,
-      text: text,
-      translationFr: translationFr,
-      links: links
-    })
+    this.setState({...nextProps})
   }
 
   renderAddEditForm () {
@@ -71,6 +61,7 @@ export default class Form extends Component {
         <input
           type='text'
           name='name'
+          className='titleInput'
           onChange={this.handleChange}
           value={isEdit && name}
         />
@@ -78,9 +69,12 @@ export default class Form extends Component {
         <input
           type='checkbox'
           name='isArticle'
+          className='isArticle'
           onChange={this.handleChange}
           checked={isEdit && isArticle}
         />
+
+        <br />
 
         <select name='tag1' onChange={this.handleChange}>
           <option value={isEdit ? tag1 : '-'}>{isEdit ? tag1 : '-'}</option>
@@ -159,6 +153,7 @@ export default class Form extends Component {
           name='linkUrl'
           onChange={this.handleChange}
           placeholder='Link url'
+          value={this.state.linkUrl}
         />
 
         <input
@@ -167,6 +162,7 @@ export default class Form extends Component {
           name='linkTitle'
           onChange={this.handleChange}
           placeholder='Link title'
+          value={this.state.linkTitle}
         />
 
         <span
@@ -180,8 +176,7 @@ export default class Form extends Component {
           className='linksTextarea'
           name='links'
           onChange={this.handleChange}
-          value={isEdit && links}
-          defaultValue="<a target='_blank' rel='noopener noreferrer' href=''></a><br>"
+          value={links !== undefined ? links : ''}
         />
 
         <span className='send-button' onClick={() => { handleSubmit(this.state) }}>Send</span>
@@ -213,12 +208,12 @@ export default class Form extends Component {
   }
 
   render () {
-    let { closeForm, isConnectionForm } = this.props
+    let { closeForm, isConnection } = this.props
     return (
       <div className='form-container'>
         <div className='form-modal' onClick={closeForm} />
         <div className='form-card'>
-          { isConnectionForm ? this.renderConnectionForm() : this.renderAddEditForm() }
+          { isConnection ? this.renderConnectionForm() : this.renderAddEditForm() }
         </div>
       </div>
     )

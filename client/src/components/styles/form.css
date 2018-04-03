@@ -41,6 +41,17 @@
   font-size: 17px;
 }
 
+.titleInput {
+  display: inline !important;
+  margin-top: 0px !important;
+}
+
+.isArticle {
+  display: inline !important;
+  margin-left: 12px !important;
+  margin-top: 0px !important;
+}
+
 .form select {
   display: inline;
   margin: 6px;
@@ -55,7 +66,7 @@
 
 .form textarea {
   border: solid 1px gainsboro;
-  height: 160px;
+  height: 180px;
   width: 450px;
 }
 

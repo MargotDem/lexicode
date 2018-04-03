@@ -38,7 +38,7 @@ class ConnectionForm extends Component {
   render () {
     return (
       <Form
-        isConnectionForm
+        isConnection
         handleSubmit={this.handleSubmit}
         closeForm={this.closeForm}
       />
