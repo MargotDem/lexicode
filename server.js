@@ -20,10 +20,6 @@ var con = mysql.createConnection({
   database: 'lexicode'
 })
 
-// con.connect(function (err) {
-//   if (err) throw err
-// })
-
 app.get('/api/entries', (req, res) => {
   res.set('Access-Control-Allow-Origin', 'http://localhost:3000')
   con.query('SELECT * FROM entries ORDER BY name', function (err, result) {
