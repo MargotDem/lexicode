@@ -20,10 +20,14 @@ var con = mysql.createConnection({
   database: 'lexicode'
 })
 
+// con.connect(function (err) {
+//   if (err) throw err
+// })
+
 app.get('/api/entries', (req, res) => {
   res.set('Access-Control-Allow-Origin', 'http://localhost:3000')
 
-  con.connect(function (err) {
+  // con.connect(function (err) {
     // getting rid of this makes the disturbing error disappear ha ha ha what is life
     // edit fri 30/03 weirdd today the request wouldnt work and then i uncommented this
     // and then it worked and then i recommented it and it still works and is this linked
@@ -33,7 +37,7 @@ app.get('/api/entries', (req, res) => {
       if (err) throw err
       res.send(result)
     })
-  })
+  // })
 })
 
 app.get('/api/entries/:entry', (req, res) => {
@@ -42,13 +46,13 @@ app.get('/api/entries/:entry', (req, res) => {
   // "Tue, 03 Apr 2018 09:02:40 GMT express deprecated req.param(name):
   // Use req.params, req.body, or req.query instead"
   let sql = 'SELECT * FROM entries WHERE id = ' + req.param('entry')
-  con.connect(function (err) {
+  // con.connect(function (err) {
     // if (err) throw err
     con.query(sql, function (err, result) {
       if (err) throw err
       res.send(result)
     })
-  })
+  // })
 })
 
 app.delete('/api/entries/:entry', (req, res) => {
@@ -57,15 +61,24 @@ app.delete('/api/entries/:entry', (req, res) => {
   // "Tue, 03 Apr 2018 09:02:40 GMT express deprecated req.param(name):
   // Use req.params, req.body, or req.query instead"
   let entryToDelete = req.param('entry')
-  // let entryToDelete = req.query.entry
   let sql = 'DELETE FROM entries WHERE id = ' + entryToDelete
-  con.connect(function (err) {
-    // if (err) throw err
-    con.query(sql, function (err, result) {
-      if (err) throw err
-      res.send(result)
-    })
-  })
+  // res.send(sql)
+  // console.log(sql)
+  // con.connect(function (err) {
+  //   // if (err) throw err
+  //   if (err) {
+  //     console.log(err)
+  //     throw err
+  //   } else {
+      con.query(sql, function (err, result) {
+        if (err) {
+          console.log(err)
+        } else {
+          res.send(result)
+        }
+      })
+  //   }
+  // })
 })
 
 app.post('/api/entries', (req, res) => {
@@ -88,34 +101,34 @@ app.post('/api/entries', (req, res) => {
   values = values.substring(0, values.lastIndexOf(','))
 
   let sql = 'INSERT INTO entries (name, isArticle, tag_1, tag_2, tag_3, text, translation_fr, links) VALUES (' + values + ')'
-  con.connect(function (err) {
+  // con.connect(function (err) {
     // if (err) throw err
     con.query(sql, function (err, result) {
       if (err) throw err
       res.send(result)
     })
-  })
+  // })
 })
 
 app.put('/api/entries/:entry', (req, res) => {
   // not sure this is useful since I still get the 'no access stuff header set' error...
   res.set('Access-Control-Allow-Origin', 'http://localhost:3000')
 
-  let { name, isArticle, tag1, tag2, tag3, text, translationFr, links } = req.body
+  let { id, name, isArticle, tag1, tag2, tag3, text, translationFr, links } = req.body
   if (isArticle) {
     isArticle = 1
   } else {
     isArticle = 0
   }
 
-  let sql = 'UPDATE entries SET name = "' + name + '", isArticle = "' + isArticle + '", tag_1 = "' + tag1 + '", tag_2 = "' + tag2 + '", tag_3 = "' + tag3 + '", text = "' + text + '", translation_fr = "' + translationFr + '", links = "' + links + '" WHERE id = ' + entryToDelete
-  con.connect(function (err) {
+  let sql = 'UPDATE entries SET name = "' + name + '", isArticle = "' + isArticle + '", tag_1 = "' + tag1 + '", tag_2 = "' + tag2 + '", tag_3 = "' + tag3 + '", text = "' + text + '", translation_fr = "' + translationFr + '", links = "' + links + '" WHERE id = ' + id
+  // con.connect(function (err) {
     // if (err) throw err
     con.query(sql, function (err, result) {
       if (err) throw err
       res.send(result)
     })
-  })
+  // })
 })
 
 app.get('/api/admin', (req, res) => {
@@ -125,13 +138,13 @@ app.get('/api/admin', (req, res) => {
   let password = req.query.password
 
   let sql = 'SELECT * FROM admin WHERE email = "' + email + '" AND password = "' + password + '"'
-  con.connect(function (err) {
+  // con.connect(function (err) {
     // if (err) throw err
     con.query(sql, function (err, result) {
       if (err) throw err
       res.send(result)
     })
-  })
+  // })
 })
 
 process.on('uncaughtException', function () {
