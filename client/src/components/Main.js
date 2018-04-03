@@ -82,7 +82,7 @@ class Main extends Component {
           language={language}
         />
 
-        <span className='add-button' onClick={() => { this.openAddForm() }}>Add an entry</span>
+        <span className='add-button' onClick={() => { this.openAddForm() }}>add an entry</span>
 
         <div className='mobile-footer'>
           <ShowAllButton onClick={this.displayAllEntries} />
