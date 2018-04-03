@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import TagsBar from './TagsBar'
 import AlphabetBar from './AlphabetBar'
 import EntriesContainer from './EntriesContainer'
@@ -7,6 +6,9 @@ import ScrollButton from './ScrollButton'
 import ShowAllButton from './ShowAllButton'
 import ToggleLanguage from './ToggleLanguage'
 import AddForm from './AddForm'
+import ConnectionForm from './ConnectionForm'
+
+import { withCookies } from 'react-cookie'
 
 import './styles/main.css'
 
@@ -17,12 +19,16 @@ class Main extends Component {
       displayAll: true,
       tagToDisplay: '',
       language: 'en',
-      showAddForm: false
+      showAddForm: false,
+      showConnectionForm: false
     }
     this.searchByTag = this.searchByTag.bind(this)
     this.displayAllEntries = this.displayAllEntries.bind(this)
     this.changeLanguage = this.changeLanguage.bind(this)
     this.closeAddForm = this.closeAddForm.bind(this)
+    this.openAddForm = this.openAddForm.bind(this)
+    this.closeConnectionForm = this.closeConnectionForm.bind(this)
+    this.openConnectionForm = this.openConnectionForm.bind(this)
   }
 
   searchByTag (tag) {
@@ -60,13 +66,37 @@ class Main extends Component {
     })
   }
 
+  openConnectionForm () {
+    document.getElementById('body').className = 'noScroll'
+    this.setState({
+      showConnectionForm: true
+    })
+  }
+
+  closeConnectionForm () {
+    document.getElementById('body').className = ''
+    this.setState({
+      showConnectionForm: false
+    })
+  }
+
+  disconnect () {
+    const { cookies } = this.props
+    cookies.set('admin', 'false')
+    window.location.reload()
+  }
+
   render () {
-    let { displayAll, tagToDisplay, language, showAddForm } = this.state
+    let { displayAll, tagToDisplay, language, showAddForm, showConnectionForm } = this.state
+    const { cookies } = this.props
+    let isAdminLogged = cookies.get('admin') === 'true'
     return (
 
       <div className='my-main'>
 
         { showAddForm && <AddForm closeForm={this.closeAddForm} /> }
+
+        { showConnectionForm && <ConnectionForm closeForm={this.closeConnectionForm} /> }
 
         <TagsBar
           onClick={this.searchByTag}
@@ -82,7 +112,23 @@ class Main extends Component {
           language={language}
         />
 
-        <span className='add-button' onClick={() => { this.openAddForm() }}>add an entry</span>
+        {
+          !isAdminLogged && <span className='connection-button' onClick={() => { this.openConnectionForm() }}>
+            connection
+          </span>
+        }
+
+        {
+          isAdminLogged && <span className='add-button' onClick={() => { this.openAddForm() }}>
+            add an entry
+          </span>
+        }
+
+        {
+          isAdminLogged && <span className='disconnection-button' onClick={() => { this.disconnect() }}>
+            disconnect
+          </span>
+        }
 
         <div className='mobile-footer'>
           <ShowAllButton onClick={this.displayAllEntries} />
@@ -93,4 +139,4 @@ class Main extends Component {
   }
 }
 
-export default Main
+export default withCookies(Main)

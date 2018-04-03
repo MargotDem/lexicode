@@ -4,6 +4,15 @@ import './index.css'
 import App from './App'
 import registerServiceWorker from './registerServiceWorker'
 // import './lib/i18n'
+import { CookiesProvider } from 'react-cookie'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+function Root () {
+  return (
+    <CookiesProvider>
+      <App />
+    </CookiesProvider>
+  )
+}
+
+ReactDOM.render(<Root />, document.getElementById('root'))
 registerServiceWorker()

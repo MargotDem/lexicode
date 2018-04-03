@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import renderHTML from 'react-render-html'
 import axios from 'axios'
+import { withCookies } from 'react-cookie'
 
 import './styles/entry.css'
 
@@ -42,6 +43,9 @@ class Entry extends Component {
   // }
 
   render () {
+    const { cookies } = this.props
+    let isAdminLogged = cookies.get('admin') === 'true'
+
     let { id, tags, title, text, links, art } = this.props
 
     const isArt = art ? ' entry__text_lightgray' : ''
@@ -52,7 +56,11 @@ class Entry extends Component {
         <div className='entry__header'>
           <div className='entry__title'>
             {title}
-            <span className='delete-button' onClick={() => { this.handleDelete(id) }}>delete</span>
+            {
+              isAdminLogged && <span className='delete-button' onClick={() => { this.handleDelete(id) }}>
+                delete
+              </span>
+            }
           </div>
           <div className='entry__tags'>
             {
@@ -78,7 +86,11 @@ class Entry extends Component {
 
         <div className={'entry__text' + isArt}>
           {renderHTML(text)}
-          <span className='edit-button' onClick={() => { this.handleEdit(id) }}>edit</span>
+          {
+            isAdminLogged && <span className='edit-button' onClick={() => { this.handleEdit(id) }}>
+              edit
+            </span>
+          }
         </div>
 
         <div className='entry__links'>
@@ -90,4 +102,4 @@ class Entry extends Component {
   }
 }
 
-export default Entry
+export default withCookies(Entry)

@@ -6,10 +6,22 @@
   color: #61cec7;
   position: fixed;
   left: 25px;
-  bottom: 114px;
+  bottom: 140px;
 }
 
 .add-button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.connection-button, .disconnection-button {
+  color: #61cec7;
+  position: fixed;
+  left: 25px;
+  bottom: 114px;
+}
+
+.connection-button:hover, .disconnection-button:hover {
   cursor: pointer;
   text-decoration: underline;
 }
