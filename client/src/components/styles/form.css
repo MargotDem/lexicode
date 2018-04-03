@@ -55,7 +55,7 @@
 
 .form textarea {
   border: solid 1px gainsboro;
-  height: 180px;
+  height: 160px;
   width: 450px;
 }
 
@@ -64,13 +64,18 @@
 }
 
 .linksTextarea {
-  height: 90px !important;
+  height: 60px !important;
 }
 
-.send-button {
+.linksInput {
+  display: inline !important;
+  margin-right: 10px !important;
+}
+
+.send-button, .addLinkButton {
   color: #61cec7;
 }
 
-.send-button:hover {
+.send-button:hover, .addLinkButton:hover {
   cursor: pointer;
 }

@@ -7,13 +7,12 @@ import { withCookies } from 'react-cookie'
 class ConnectionForm extends Component {
   constructor (props) {
     super(props)
-    this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.closeForm = this.closeForm.bind(this)
   }
 
-  handleSubmit () {
-    let { email, password } = this.state
+  handleSubmit (userInput) {
+    let { email, password } = userInput
     axios.get('/api/admin', {
       params: {
         email: email,
@@ -32,14 +31,6 @@ class ConnectionForm extends Component {
     window.location.reload()
   }
 
-  handleChange (e) {
-    let field = e.target.name
-    let value = e.target.value
-    this.setState({
-      [field]: value
-    })
-  }
-
   closeForm () {
     this.props.closeForm()
   }
@@ -48,7 +39,6 @@ class ConnectionForm extends Component {
     return (
       <Form
         isConnectionForm
-        handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
         closeForm={this.closeForm}
       />

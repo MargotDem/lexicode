@@ -6,7 +6,6 @@ import axios from 'axios'
 export default class EditForm extends Component {
   constructor (props) {
     super(props)
-    this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.closeForm = this.closeForm.bind(this)
   }
@@ -32,8 +31,7 @@ export default class EditForm extends Component {
       })
   }
 
-  handleSubmit () {
-    let entry = this.state
+  handleSubmit (entry) {
     let { id } = this.state
     axios.put('/api/entries/' + id, entry)
       .then(response => {
@@ -45,14 +43,6 @@ export default class EditForm extends Component {
     window.location.reload()
   }
 
-  handleChange (e) {
-    let field = e.target.name
-    let value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
-    this.setState({
-      [field]: value
-    })
-  }
-
   closeForm () {
     this.props.closeForm()
   }
@@ -62,7 +52,6 @@ export default class EditForm extends Component {
       <Form
         isEdit
         {...this.state}
-        handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
         closeForm={this.closeForm}
       />
