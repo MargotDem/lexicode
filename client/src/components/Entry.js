@@ -32,10 +32,6 @@ class Entry extends Component {
     window.location.reload()
   }
 
-  handleEdit (id) {
-    this.props.openForm(id)
-  }
-
   // confirmDelete (id) {
   //   if (window.confirm('Delete this entry ?')) {
   //     this.handleDelete(id)
@@ -46,7 +42,7 @@ class Entry extends Component {
     const { cookies } = this.props
     let isAdminLogged = cookies.get('admin') === 'true'
 
-    let { id, tags, title, text, links, art } = this.props
+    let { id, tags, title, text, links, art, openForm } = this.props
 
     const isArt = art ? ' entry__text_lightgray' : ''
 
@@ -87,7 +83,7 @@ class Entry extends Component {
         <div className={'entry__text' + isArt}>
           {renderHTML(text)}
           {
-            isAdminLogged && <span className='edit-button' onClick={() => { this.handleEdit(id) }}>
+            isAdminLogged && <span className='edit-button' onClick={() => { openForm(true, id) }}>
               edit
             </span>
           }

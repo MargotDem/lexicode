@@ -32,7 +32,7 @@ class ConnectionForm extends Component {
   }
 
   closeForm () {
-    this.props.closeForm()
+    this.props.closeForm('showConnectionForm', false)
   }
 
   render () {

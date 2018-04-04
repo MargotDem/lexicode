@@ -14,8 +14,7 @@ class EntriesContainer extends Component {
       showEditForm: false,
       entry: 0
     }
-    this.openEditForm = this.openEditForm.bind(this)
-    this.closeEditForm = this.closeEditForm.bind(this)
+    this.handleFormVisibility = this.handleFormVisibility.bind(this)
   }
 
   componentDidMount () {
@@ -28,18 +27,13 @@ class EntriesContainer extends Component {
       })
   }
 
-  openEditForm (id) {
-    document.getElementById('body').className = 'noScroll'
-    this.setState({
-      showEditForm: true,
-      entry: id
-    })
-  }
+  handleFormVisibility (shouldShow, id) {
+    shouldShow ? document.getElementById('body').className = 'noScroll'
+    : document.getElementById('body').className = ''
 
-  closeEditForm () {
-    document.getElementById('body').className = ''
     this.setState({
-      showEditForm: false
+      showEditForm: shouldShow,
+      entry: id
     })
   }
 
@@ -49,7 +43,7 @@ class EntriesContainer extends Component {
 
     return (
       <div className='entries'>
-        { showEditForm && <EditForm entry={entry} closeForm={this.closeEditForm} /> }
+        { showEditForm && <EditForm entry={entry} closeForm={this.handleFormVisibility} /> }
 
         {
           entries.map((entry) => {
@@ -67,7 +61,7 @@ class EntriesContainer extends Component {
                   art={entry.isArticle}
                   tags={tags}
                   onClick={onClick}
-                  openForm={this.openEditForm}
+                  openForm={this.handleFormVisibility}
                 />
               )
             }

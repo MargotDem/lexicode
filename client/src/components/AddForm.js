@@ -22,7 +22,7 @@ export default class AddForm extends Component {
   }
 
   closeForm () {
-    this.props.closeForm()
+    this.props.closeForm('showAddForm', false)
   }
 
   render () {

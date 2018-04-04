@@ -25,10 +25,7 @@ class Main extends Component {
     this.searchByTag = this.searchByTag.bind(this)
     this.displayAllEntries = this.displayAllEntries.bind(this)
     this.changeLanguage = this.changeLanguage.bind(this)
-    this.closeAddForm = this.closeAddForm.bind(this)
-    this.openAddForm = this.openAddForm.bind(this)
-    this.closeConnectionForm = this.closeConnectionForm.bind(this)
-    this.openConnectionForm = this.openConnectionForm.bind(this)
+    this.handleFormVisibility = this.handleFormVisibility.bind(this)
   }
 
   searchByTag (tag) {
@@ -52,31 +49,12 @@ class Main extends Component {
     })
   }
 
-  openAddForm () {
-    document.getElementById('body').className = 'noScroll'
-    this.setState({
-      showAddForm: true
-    })
-  }
+  handleFormVisibility (form, shouldShow) {
+    shouldShow ? document.getElementById('body').className = 'noScroll'
+    : document.getElementById('body').className = ''
 
-  closeAddForm () {
-    document.getElementById('body').className = ''
     this.setState({
-      showAddForm: false
-    })
-  }
-
-  openConnectionForm () {
-    document.getElementById('body').className = 'noScroll'
-    this.setState({
-      showConnectionForm: true
-    })
-  }
-
-  closeConnectionForm () {
-    document.getElementById('body').className = ''
-    this.setState({
-      showConnectionForm: false
+      [form]: shouldShow
     })
   }
 
@@ -94,9 +72,9 @@ class Main extends Component {
 
       <div className='my-main'>
 
-        { showAddForm && <AddForm closeForm={this.closeAddForm} /> }
+        { showAddForm && <AddForm closeForm={this.handleFormVisibility} /> }
 
-        { showConnectionForm && <ConnectionForm closeForm={this.closeConnectionForm} /> }
+        { showConnectionForm && <ConnectionForm closeForm={this.handleFormVisibility} /> }
 
         <TagsBar
           onClick={this.searchByTag}
@@ -113,13 +91,13 @@ class Main extends Component {
         />
 
         {
-          !isAdminLogged && <span className='connection-button' onClick={() => { this.openConnectionForm() }}>
+          !isAdminLogged && <span className='connection-button' onClick={() => { this.handleFormVisibility('showConnectionForm', true) }}>
             connection
           </span>
         }
 
         {
-          isAdminLogged && <span className='add-button' onClick={() => { this.openAddForm() }}>
+          isAdminLogged && <span className='add-button' onClick={() => { this.handleFormVisibility('showAddForm', true) }}>
             add an entry
           </span>
         }

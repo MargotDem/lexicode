@@ -44,7 +44,7 @@ export default class EditForm extends Component {
   }
 
   closeForm () {
-    this.props.closeForm()
+    this.props.closeForm(false, 0)
   }
 
   render () {
