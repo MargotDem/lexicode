@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { withCookies } from 'react-cookie'
+
 import TagsBar from './TagsBar'
 import AlphabetBar from './AlphabetBar'
 import EntriesContainer from './EntriesContainer'
@@ -7,8 +9,6 @@ import ShowAllButton from './ShowAllButton'
 import ToggleLanguage from './ToggleLanguage'
 import AddForm from './AddForm'
 import ConnectionForm from './ConnectionForm'
-
-import { withCookies } from 'react-cookie'
 
 import './styles/main.css'
 

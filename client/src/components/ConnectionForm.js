@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Form from './Form'
-
 import axios from 'axios'
 import { withCookies } from 'react-cookie'
+
+import Form from './Form'
 
 class ConnectionForm extends Component {
   constructor (props) {

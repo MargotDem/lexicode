@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+
 import Entry from './Entry'
 import EditForm from './EditForm'
-
-import axios from 'axios'
 
 import './styles/entriescontainer.css'
 

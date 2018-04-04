@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import './styles/scrollbutton.css'
 
 export default class ScrollButton extends Component {
