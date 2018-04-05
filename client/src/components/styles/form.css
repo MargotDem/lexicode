@@ -7,7 +7,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* z-index: 400; */
 }
 
 .form-modal {
@@ -20,17 +19,17 @@
 }
 
 .form-card {
-  height: 700px;
+  height: 90%;
   width: 550px;
   background: whitesmoke;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 410;
+  z-index: 100;
 }
 
 .form {
-
+  /* height: 100%; */
 }
 
 .form input, textarea, select {
@@ -60,13 +59,12 @@
 .form input {
   border: none;
   border-bottom: solid 1px gainsboro;
-  /* height: 30px; */
-  /* background: gainsboro; */
 }
 
 .form textarea {
   border: solid 1px gainsboro;
   height: 180px;
+  height: 22vh;
   width: 450px;
 }
 
