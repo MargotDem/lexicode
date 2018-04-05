@@ -1,11 +1,12 @@
-// import CONFIG from './config.js'
+require('dotenv').config()
+
 const bodyParser = require('body-parser')
 
 const express = require('express')
 
 const app = express()
 
-const port = 5002
+const port = process.env.PORT || 5002
 
 app.use(bodyParser.json())
 
@@ -14,9 +15,9 @@ app.listen(port, () => console.log(`Listening on port ${port}`))
 var mysql = require('mysql')
 
 var con = mysql.createConnection({
-  host: 'localhost',
+  host: process.env.HOST,
   user: 'lexicodeUser',
-  password: 'TakeCodeNotes13',
+  password: process.env.PASSWORD,
   database: 'lexicode'
 })
 
