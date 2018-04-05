@@ -28,7 +28,9 @@ class ConnectionForm extends Component {
       .catch(error => {
         console.log(error)
       })
-    window.location.reload()
+      .then(() => {
+        window.location.reload()
+      })
   }
 
   closeForm () {

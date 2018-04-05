@@ -28,7 +28,9 @@ class Entry extends Component {
       .catch(error => {
         console.log(error)
       })
-    window.location.reload()
+      .then(() => {
+        window.location.reload()
+      })
   }
 
   // confirmDelete (id) {
