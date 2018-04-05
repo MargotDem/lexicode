@@ -29,7 +29,7 @@ class Entry extends Component {
         console.log(error)
       })
       .then(() => {
-        window.location.reload()
+        this.props.fetchEntries()
       })
   }
 
@@ -48,9 +48,9 @@ class Entry extends Component {
     const isArt = art ? ' entry__text_lightgray' : ''
 
     return (
-      <div className='entry' id={title[0]} ref={title[0]}>
+      <div className='entry' id={title[0]}>
 
-        <div className='entry__header'>
+        <div className='entry__header' id={title}>
           <div className='entry__title'>
             {title}
             {

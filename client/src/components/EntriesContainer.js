@@ -15,15 +15,23 @@ class EntriesContainer extends Component {
       entry: 0
     }
     this.handleFormVisibility = this.handleFormVisibility.bind(this)
+    this.fetchEntries = this.fetchEntries.bind(this)
   }
 
   componentDidMount () {
+    this.fetchEntries()
+  }
+
+  fetchEntries (title) {
     axios.get('/api/entries')
       .then(entries => {
         this.setState({ entries: entries.data })
       })
       .catch(error => {
         console.log(error)
+      })
+      .then(() => {
+        title && document.getElementById(title).scrollIntoView()
       })
   }
 
@@ -43,7 +51,7 @@ class EntriesContainer extends Component {
 
     return (
       <div className='entries'>
-        { showEditForm && <EditForm entry={entry} closeForm={this.handleFormVisibility} /> }
+        { showEditForm && <EditForm entry={entry} closeForm={this.handleFormVisibility} fetchEntries={this.fetchEntries} /> }
 
         {
           entries.map((entry) => {
@@ -62,6 +70,7 @@ class EntriesContainer extends Component {
                   tags={tags}
                   onClick={onClick}
                   openForm={this.handleFormVisibility}
+                  fetchEntries={this.fetchEntries}
                 />
               )
             }
