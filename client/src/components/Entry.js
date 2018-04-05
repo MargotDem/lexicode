@@ -33,11 +33,11 @@ class Entry extends Component {
       })
   }
 
-  // confirmDelete (id) {
-  //   if (window.confirm('Delete this entry ?')) {
-  //     this.handleDelete(id)
-  //   }
-  // }
+  confirmDelete (id) {
+    if (window.confirm('Delete this entry ?')) {
+      this.handleDelete(id)
+    }
+  }
 
   render () {
     const { cookies } = this.props
@@ -54,7 +54,7 @@ class Entry extends Component {
           <div className='entry__title'>
             {title}
             {
-              isAdminLogged && <span className='delete-button' onClick={() => { this.handleDelete(id) }}>
+              isAdminLogged && <span className='delete-button' onClick={() => { this.confirmDelete(id) }}>
                 delete
               </span>
             }
