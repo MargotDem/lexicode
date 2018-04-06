@@ -1,6 +1,6 @@
 # Lexicode
 
-A tool to take notes on code-related topics (though it could be anything really)
+A tool to take notes on code-related topics (though it could be anything really) that you can clone for your personal use. It's a work in progress, you can see a demo/first version [here](https://lexicode.herokuapp.com/). Issues and pull requests are welcome :)
 
 ## How to use it locally:
 
@@ -27,12 +27,12 @@ cd name_of_the_repository
 * Install dependencies:
 
 ```
-npm install
+yarn install
 ```
 
 * Launch the project (this will open it on localhost:3000):
 
 ```
-npm start
+yarn dev
 ```
-
+#### And you're all set !
