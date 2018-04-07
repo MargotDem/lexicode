@@ -20,7 +20,6 @@ class EntriesContainer extends Component {
       entry: 0
     }
     this.handleFormVisibility = this.handleFormVisibility.bind(this)
-    this.handleFormVisibility2 = this.handleFormVisibility2.bind(this)
     this.fetchEntries = this.fetchEntries.bind(this)
   }
 
@@ -41,22 +40,13 @@ class EntriesContainer extends Component {
       })
   }
 
-  handleFormVisibility (shouldShow, id) {
+  handleFormVisibility (form, shouldShow, id) {
     shouldShow ? document.getElementById('body').className = 'noScroll'
     : document.getElementById('body').className = ''
 
     this.setState({
-      showEditForm: shouldShow,
+      [form]: shouldShow,
       entry: id
-    })
-  }
-
-  handleFormVisibility2 (form, shouldShow) {
-    shouldShow ? document.getElementById('body').className = 'noScroll'
-    : document.getElementById('body').className = ''
-
-    this.setState({
-      [form]: shouldShow
     })
   }
 
@@ -75,12 +65,6 @@ class EntriesContainer extends Component {
 
     return (
       <div className='entries'>
-        { showAddForm && <AddForm closeForm={this.handleFormVisibility2} /> }
-
-        { showConnectionForm && <ConnectionForm closeForm={this.handleFormVisibility2} /> }
-
-        { showEditForm && <EditForm entry={entry} closeForm={this.handleFormVisibility} fetchEntries={this.fetchEntries} /> }
-
         {
           entries.map((entry) => {
             let tags = [entry.tag_1, entry.tag_2, entry.tag_3]
@@ -110,7 +94,7 @@ class EntriesContainer extends Component {
           !isAdminLogged &&
           <span
             className='connection-button'
-            onClick={() => { this.handleFormVisibility2('showConnectionForm', true) }}
+            onClick={() => { this.handleFormVisibility('showConnectionForm', true) }}
           >
             connection
           </span>
@@ -120,7 +104,7 @@ class EntriesContainer extends Component {
           isAdminLogged &&
           <span
             className='add-button'
-            onClick={() => { this.handleFormVisibility2('showAddForm', true) }}
+            onClick={() => { this.handleFormVisibility('showAddForm', true) }}
           >
             add an entry
           </span>
@@ -135,6 +119,12 @@ class EntriesContainer extends Component {
             disconnect
           </span>
         }
+
+        { showAddForm && <AddForm closeForm={this.handleFormVisibility} /> }
+
+        { showConnectionForm && <ConnectionForm closeForm={this.handleFormVisibility} /> }
+
+        { showEditForm && <EditForm entry={entry} closeForm={this.handleFormVisibility} fetchEntries={this.fetchEntries} /> }
       </div>
     )
   }

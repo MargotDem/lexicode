@@ -84,7 +84,7 @@ class Entry extends Component {
         <div className={'entry__text' + isArt}>
           {renderHTML(text)}
           {
-            isAdminLogged && <span className='edit-button' onClick={() => { openForm(true, id) }}>
+            isAdminLogged && <span className='edit-button' onClick={() => { openForm('showEditForm', true, id) }}>
               edit
             </span>
           }
