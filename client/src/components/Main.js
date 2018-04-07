@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { withCookies } from 'react-cookie'
 
 import TagsBar from './TagsBar'
 import AlphabetBar from './AlphabetBar'
@@ -7,24 +6,19 @@ import EntriesContainer from './EntriesContainer'
 import ScrollButton from './ScrollButton'
 import ShowAllButton from './ShowAllButton'
 import ToggleLanguage from './ToggleLanguage'
-import AddForm from './AddForm'
-import ConnectionForm from './ConnectionForm'
 
 import './styles/main.css'
 
-class Main extends Component {
+export default class Main extends Component {
   constructor (props) {
     super(props)
     this.state = {
       tagToDisplay: '',
-      language: 'en',
-      showAddForm: false,
-      showConnectionForm: false
+      language: 'en'
     }
     this.searchByTag = this.searchByTag.bind(this)
     this.displayAllEntries = this.displayAllEntries.bind(this)
     this.changeLanguage = this.changeLanguage.bind(this)
-    this.handleFormVisibility = this.handleFormVisibility.bind(this)
   }
 
   searchByTag (tag) {
@@ -47,32 +41,11 @@ class Main extends Component {
     })
   }
 
-  handleFormVisibility (form, shouldShow) {
-    shouldShow ? document.getElementById('body').className = 'noScroll'
-    : document.getElementById('body').className = ''
-
-    this.setState({
-      [form]: shouldShow
-    })
-  }
-
-  disconnect () {
-    const { cookies } = this.props
-    cookies.set('admin', 'false')
-    window.location.reload()
-  }
-
   render () {
-    let { tagToDisplay, language, showAddForm, showConnectionForm } = this.state
-    const { cookies } = this.props
-    let isAdminLogged = cookies.get('admin') === 'true'
+    let { tagToDisplay, language } = this.state
     return (
 
       <div className='my-main'>
-
-        { showAddForm && <AddForm closeForm={this.handleFormVisibility} /> }
-
-        { showConnectionForm && <ConnectionForm closeForm={this.handleFormVisibility} /> }
 
         <TagsBar
           onClick={this.searchByTag}
@@ -88,36 +61,6 @@ class Main extends Component {
           language={language}
         />
 
-        {
-          !isAdminLogged &&
-          <span
-            className='connection-button'
-            onClick={() => { this.handleFormVisibility('showConnectionForm', true) }}
-          >
-            connection
-          </span>
-        }
-
-        {
-          isAdminLogged &&
-          <span
-            className='add-button'
-            onClick={() => { this.handleFormVisibility('showAddForm', true) }}
-          >
-            add an entry
-          </span>
-        }
-
-        {
-          isAdminLogged &&
-          <span
-            className='disconnection-button'
-            onClick={() => { this.disconnect() }}
-          >
-            disconnect
-          </span>
-        }
-
         <div className='mobile-footer'>
           <ShowAllButton onClick={this.displayAllEntries} />
           <ScrollButton />
@@ -126,5 +69,3 @@ class Main extends Component {
     )
   }
 }
-
-export default withCookies(Main)

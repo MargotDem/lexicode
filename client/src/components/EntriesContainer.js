@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { withCookies } from 'react-cookie'
 
 import Entry from './Entry'
 import EditForm from './EditForm'
+import AddForm from './AddForm'
+import ConnectionForm from './ConnectionForm'
 
 import './styles/entriescontainer.css'
 
@@ -12,9 +15,12 @@ class EntriesContainer extends Component {
     this.state = {
       entries: [],
       showEditForm: false,
+      showAddForm: false,
+      showConnectionForm: false,
       entry: 0
     }
     this.handleFormVisibility = this.handleFormVisibility.bind(this)
+    this.handleFormVisibility2 = this.handleFormVisibility2.bind(this)
     this.fetchEntries = this.fetchEntries.bind(this)
   }
 
@@ -45,12 +51,34 @@ class EntriesContainer extends Component {
     })
   }
 
+  handleFormVisibility2 (form, shouldShow) {
+    shouldShow ? document.getElementById('body').className = 'noScroll'
+    : document.getElementById('body').className = ''
+
+    this.setState({
+      [form]: shouldShow
+    })
+  }
+
+  disconnect () {
+    const { cookies } = this.props
+    cookies.set('admin', 'false')
+    window.location.reload()
+  }
+
   render () {
     let { tagToDisplay, onClick, language } = this.props
-    let { entries, showEditForm, entry } = this.state
+    let { entries, showEditForm, showAddForm, showConnectionForm, entry } = this.state
+
+    const { cookies } = this.props
+    let isAdminLogged = cookies.get('admin') === 'true'
 
     return (
       <div className='entries'>
+        { showAddForm && <AddForm closeForm={this.handleFormVisibility2} /> }
+
+        { showConnectionForm && <ConnectionForm closeForm={this.handleFormVisibility2} /> }
+
         { showEditForm && <EditForm entry={entry} closeForm={this.handleFormVisibility} fetchEntries={this.fetchEntries} /> }
 
         {
@@ -77,12 +105,42 @@ class EntriesContainer extends Component {
             return null
           })
         }
+
+        {
+          !isAdminLogged &&
+          <span
+            className='connection-button'
+            onClick={() => { this.handleFormVisibility2('showConnectionForm', true) }}
+          >
+            connection
+          </span>
+        }
+
+        {
+          isAdminLogged &&
+          <span
+            className='add-button'
+            onClick={() => { this.handleFormVisibility2('showAddForm', true) }}
+          >
+            add an entry
+          </span>
+        }
+
+        {
+          isAdminLogged &&
+          <span
+            className='disconnection-button'
+            onClick={() => { this.disconnect() }}
+          >
+            disconnect
+          </span>
+        }
       </div>
     )
   }
 }
 
-export default EntriesContainer
+export default withCookies(EntriesContainer)
 
 /* this works */
 // componentDidMount () {

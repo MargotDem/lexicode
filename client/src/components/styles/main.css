@@ -2,28 +2,20 @@
   width: 100vw;
 }
 
-.add-button {
+.add-button, .connection-button, .disconnection-button {
   color: #61cec7;
   position: fixed;
   left: 25px;
   bottom: 140px;
 }
 
-.add-button:hover {
+.add-button:hover, .connection-button:hover, .disconnection-button:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
 .connection-button, .disconnection-button {
-  color: #61cec7;
-  position: fixed;
-  left: 25px;
   bottom: 114px;
-}
-
-.connection-button:hover, .disconnection-button:hover {
-  cursor: pointer;
-  text-decoration: underline;
 }
 
 @media (max-width: 800px) {

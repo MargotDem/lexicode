@@ -28,10 +28,6 @@
   z-index: 100;
 }
 
-.form {
-  /* height: 100%; */
-}
-
 .form input, textarea, select {
   outline: none;
   display: block;
@@ -87,4 +83,5 @@
 
 .send-button:hover, .addLinkButton:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
