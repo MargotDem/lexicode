@@ -11,6 +11,7 @@ export default class AddForm extends Component {
   }
 
   handleSubmit (entry) {
+    let name = entry.name
     axios.post('/api/entries', entry)
       .then(response => {
         console.log(response)
@@ -19,7 +20,8 @@ export default class AddForm extends Component {
         console.log(error)
       })
       .then(() => {
-        window.location.reload()
+        this.closeForm()
+        this.props.fetchEntries(name)
       })
   }
 

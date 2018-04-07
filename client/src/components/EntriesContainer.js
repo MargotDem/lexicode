@@ -120,9 +120,9 @@ class EntriesContainer extends Component {
           </span>
         }
 
-        { showAddForm && <AddForm closeForm={this.handleFormVisibility} /> }
-
         { showConnectionForm && <ConnectionForm closeForm={this.handleFormVisibility} /> }
+
+        { showAddForm && <AddForm closeForm={this.handleFormVisibility} fetchEntries={this.fetchEntries} /> }
 
         { showEditForm && <EditForm entry={entry} closeForm={this.handleFormVisibility} fetchEntries={this.fetchEntries} /> }
       </div>

@@ -33,7 +33,6 @@ export default class EditForm extends Component {
 
   handleSubmit (entry) {
     let { id, name } = entry
-    console.log(id)
     axios.put('/api/entries/' + id, entry)
       .then(response => {
         console.log(response)
@@ -42,7 +41,7 @@ export default class EditForm extends Component {
         console.log(error)
       })
       .then(() => {
-        this.closeForm(false, 0)
+        this.closeForm()
         this.props.fetchEntries(name)
       })
   }
