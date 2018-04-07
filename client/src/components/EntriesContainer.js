@@ -31,7 +31,7 @@ class EntriesContainer extends Component {
         console.log(error)
       })
       .then(() => {
-        title && document.getElementById(title).scrollIntoView()
+        title && document.getElementById(title).scrollIntoView({block: 'center'})
       })
   }
 
