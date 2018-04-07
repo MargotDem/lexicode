@@ -16,7 +16,6 @@ class Main extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      displayAll: true,
       tagToDisplay: '',
       language: 'en',
       showAddForm: false,
@@ -30,7 +29,6 @@ class Main extends Component {
 
   searchByTag (tag) {
     this.setState({
-      displayAll: false,
       tagToDisplay: tag
     })
     window.scrollTo(0, 0)
@@ -38,7 +36,7 @@ class Main extends Component {
 
   displayAllEntries () {
     this.setState({
-      displayAll: true
+      tagToDisplay: ''
     })
     window.scrollTo(0, 0)
   }
@@ -65,7 +63,7 @@ class Main extends Component {
   }
 
   render () {
-    let { displayAll, tagToDisplay, language, showAddForm, showConnectionForm } = this.state
+    let { tagToDisplay, language, showAddForm, showConnectionForm } = this.state
     const { cookies } = this.props
     let isAdminLogged = cookies.get('admin') === 'true'
     return (
@@ -79,31 +77,43 @@ class Main extends Component {
         <TagsBar
           onClick={this.searchByTag}
         />
+
         <AlphabetBar />
 
         <ToggleLanguage changeLanguage={this.changeLanguage} language={language} />
 
         <EntriesContainer
-          displayAll={displayAll}
           tagToDisplay={tagToDisplay}
           onClick={this.searchByTag}
           language={language}
         />
 
         {
-          !isAdminLogged && <span className='connection-button' onClick={() => { this.handleFormVisibility('showConnectionForm', true) }}>
+          !isAdminLogged &&
+          <span
+            className='connection-button'
+            onClick={() => { this.handleFormVisibility('showConnectionForm', true) }}
+          >
             connection
           </span>
         }
 
         {
-          isAdminLogged && <span className='add-button' onClick={() => { this.handleFormVisibility('showAddForm', true) }}>
+          isAdminLogged &&
+          <span
+            className='add-button'
+            onClick={() => { this.handleFormVisibility('showAddForm', true) }}
+          >
             add an entry
           </span>
         }
 
         {
-          isAdminLogged && <span className='disconnection-button' onClick={() => { this.disconnect() }}>
+          isAdminLogged &&
+          <span
+            className='disconnection-button'
+            onClick={() => { this.disconnect() }}
+          >
             disconnect
           </span>
         }

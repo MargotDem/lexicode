@@ -46,7 +46,7 @@ class EntriesContainer extends Component {
   }
 
   render () {
-    let { displayAll, tagToDisplay, onClick, language } = this.props
+    let { tagToDisplay, onClick, language } = this.props
     let { entries, showEditForm, entry } = this.state
 
     return (
@@ -58,7 +58,7 @@ class EntriesContainer extends Component {
             let tags = [entry.tag_1, entry.tag_2, entry.tag_3]
             let text = language === 'en' ? entry.text : (entry.translation_fr !== '-' ? entry.translation_fr : entry.text)
 
-            if (displayAll || tags.indexOf(tagToDisplay) > -1) {
+            if (tagToDisplay === '' || tags.indexOf(tagToDisplay) > -1) {
               return (
                 <Entry
                   id={entry.id}
