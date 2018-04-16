@@ -10,6 +10,7 @@ export default class Form extends Component {
     this.addLink = this.addLink.bind(this)
     this.renderAddEditForm = this.renderAddEditForm.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.handleKeyPress = this.handleKeyPress.bind(this)
   }
 
   addLink () {
@@ -31,6 +32,14 @@ export default class Form extends Component {
     this.setState({
       [field]: value
     })
+  }
+
+  handleKeyPress (event) {
+    let { handleSubmit } = this.props
+    if (event.key === 'Enter') {
+      event.preventDefault()
+      handleSubmit(this.state)
+    }
   }
 
   // not sure how or why but have to do this for the pre-filled values to work
@@ -192,6 +201,7 @@ export default class Form extends Component {
           type='text'
           name='email'
           onChange={this.handleChange}
+          onKeyPress={this.handleKeyPress}
           placeholder='Email'
         />
 
@@ -199,6 +209,7 @@ export default class Form extends Component {
           type='password'
           name='password'
           onChange={this.handleChange}
+          onKeyPress={this.handleKeyPress}
           placeholder='Password'
         />
 
